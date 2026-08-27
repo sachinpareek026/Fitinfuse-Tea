@@ -171,15 +171,20 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
   const step7Opacity = step7In;
   const step7Y = (1 - step7In) * 20;
 
+  // Scroll-driven dynamic 3D rotation angle (e.g. 360deg full rotation across scroll timeline)
+  const productRotationY = (scrollProgress * 360 * 1.5) % 360;
+  const productTiltZ = Math.sin(scrollProgress * Math.PI * 4) * 2.5;
+
+
   return (
     <div className="relative bg-[#071C13] text-[#F4F0E5] selection:bg-[#C7A35A] selection:text-[#071C13] min-h-screen">
       {/* 1. TOP MINIMAL LUXURY HEADER (Fully Opaque, Crisp, Sharp, No Blur) */}
       <header className="fixed top-0 left-0 right-0 z-50 px-6 sm:px-12 h-16 sm:h-20 flex items-center justify-between pointer-events-none transition-all duration-300 bg-[#071C13] border-b border-[#C7A35A]/20 shadow-md">
         <div className="pointer-events-auto flex items-center gap-3">
-          <span className="font-serif text-xl sm:text-2xl font-bold tracking-[0.22em] text-[#F4F0E5] uppercase">
+          <span className="font-boris text-xl sm:text-2xl font-normal tracking-[0.22em] text-[#F4F0E5] uppercase">
             {BRAND_INFO.name}
           </span>
-          <span className="hidden sm:inline-block text-[9px] font-sans font-semibold tracking-[0.25em] text-[#C7A35A] uppercase px-2.5 py-0.5 border border-[#C7A35A]/30 rounded-full bg-[#0D2F20]">
+          <span className="hidden sm:inline-block text-[9px] font-poppins font-semibold tracking-[0.25em] text-[#C7A35A] uppercase px-2.5 py-0.5 border border-[#C7A35A]/30 rounded-full bg-[#0D2F20]">
             {BRAND_INFO.descriptor}
           </span>
         </div>
@@ -189,7 +194,7 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
           <button
             onClick={onOpenExplore}
             id="header-explore-btn"
-            className="px-4 sm:px-6 py-2 bg-[#C7A35A] hover:bg-[#DFC07B] text-[#071C13] font-sans text-xs font-bold tracking-[0.2em] uppercase rounded-full transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2 cursor-pointer focus:outline-none"
+            className="px-4 sm:px-6 py-2 bg-[#C7A35A] hover:bg-[#DFC07B] text-[#071C13] font-poppins text-xs font-semibold tracking-[0.2em] uppercase rounded-full transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2 cursor-pointer focus:outline-none"
           >
             <span>Explore</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -242,15 +247,21 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
             id="main-product-center-stage"
             className="relative z-20 flex-1 w-full max-h-screen pt-16 sm:pt-20 pb-4 px-4 sm:px-8 flex items-center justify-center pointer-events-none"
           >
-            {/* Center Product Anchor - Pure Center Stage */}
-            <div className="relative flex items-center justify-center select-none w-full h-full max-w-5xl mx-auto">
-              <div className="relative flex items-center justify-center w-full h-full">
+            {/* Center Product Anchor - Pure Center Stage with 3D perspective and animated rotation */}
+            <div className="relative flex items-center justify-center select-none w-full h-full max-w-5xl mx-auto [perspective:1200px]">
+              <div 
+                className="relative flex items-center justify-center w-full h-full transition-transform duration-100 ease-out will-change-transform animate-float-slow"
+                style={{
+                  transform: `rotateY(${productRotationY}deg) rotateZ(${productTiltZ}deg)`,
+                  transformStyle: 'preserve-3d',
+                }}
+              >
                 <img
                   id="fitinfuse-hero-canister"
                   src="/product-canister.png"
                   alt="FitInFuse Stress Relief Infusion — Peppermint Flavour"
                   referrerPolicy="no-referrer"
-                  className="h-full max-h-[calc(100vh-6rem)] w-auto max-w-[90vw] object-contain drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)] pointer-events-auto transition-transform duration-500 hover:scale-[1.01]"
+                  className="h-full max-h-[calc(100vh-6rem)] w-auto max-w-[90vw] object-contain drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)] pointer-events-auto transition-all duration-300 origin-center scale-[0.8] md:scale-100 hover:scale-[0.83] md:hover:scale-[1.03]"
                   onError={(e) => {
                     const target = e.currentTarget;
                     if (!target.src.includes('1000568378-removebg-preview.png')) {
@@ -266,7 +277,7 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
           <div className="absolute inset-0 z-30 pointer-events-none w-full h-full">
             
             {/* ---------------------------------------------------- */}
-            {/* STEP 1: PRODUCT INTRODUCTION (Flanked Left & Right, Never Covering Canister) */}
+            {/* STEP 1: PRODUCT INTRODUCTION (Towering Title, Badges & Herbal Specs) */}
             {/* ---------------------------------------------------- */}
             <div
               id="step-1-product-intro"
@@ -276,39 +287,52 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
                 visibility: step1Opacity > 0.01 ? 'visible' : 'hidden',
               }}
             >
-              {/* Left Flank: Main Title & Brand */}
-              <div className="absolute left-6 sm:left-10 md:left-14 lg:left-20 xl:left-24 top-1/2 -translate-y-1/2 max-w-[260px] sm:max-w-xs md:max-w-sm text-left space-y-3 z-30 pointer-events-auto">
-                <div className="space-y-1">
-                  <span className="text-[11px] sm:text-xs font-sans font-semibold tracking-[0.35em] text-[#C7A35A] uppercase block">
-                    {BRAND_INFO.name}
-                  </span>
-                  <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[#F4F0E5] tracking-tight leading-[1.08]">
-                    STRESS RELIEF <br />
-                    <span className="italic font-light text-[#E5C989]">INFUSION</span>
-                  </h1>
+              {/* Left Flank: Main Title, Brand & Purity Badges */}
+              <div className="absolute left-4 sm:left-10 md:left-14 lg:left-20 xl:left-24 bottom-6 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 max-w-[calc(100vw-2rem)] sm:max-w-xs md:max-w-sm lg:max-w-md text-center sm:text-left z-30 pointer-events-auto flex flex-col items-center sm:items-start">
+                <div className="space-y-3 bg-[#071C13]/85 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/30 shadow-2xl sm:shadow-none w-full sm:w-auto">
+                  <div className="space-y-1">
+                    <span className="text-[11px] sm:text-xs font-sans font-black tracking-[0.35em] text-[#E5C989] uppercase block drop-shadow-sm">
+                      {BRAND_INFO.name}
+                    </span>
+                    <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#F4F0E5] tracking-tight leading-[1.05]">
+                      STRESS RELIEF <br />
+                      <span className="italic font-medium text-[#E5C989]">INFUSION</span>
+                    </h1>
+                  </div>
+
+                  <div className="flex items-center justify-center sm:justify-start gap-2.5 py-0.5">
+                    <span className="h-[1.5px] w-8 bg-[#C7A35A]" />
+                    <span className="text-[#E5C989] text-xs">❦</span>
+                    <span className="h-[1.5px] w-8 bg-[#C7A35A]" />
+                  </div>
+
+                  <p className="text-xs sm:text-sm font-sans font-bold tracking-[0.2em] text-[#E5C989] uppercase">
+                    {BRAND_INFO.flavour} <span className="text-[#F4F0E5]/40 mx-1">•</span> {BRAND_INFO.caffeine}
+                  </p>
+
+                  <div className="pt-1 flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                    <span className="text-[10px] sm:text-xs font-sans font-bold tracking-[0.18em] text-[#E5C989] uppercase">
+                      15 Pyramid Bags
+                    </span>
+                    <span className="text-[10px] sm:text-xs font-sans font-bold tracking-[0.18em] text-[#E5C989] uppercase">
+                      15 Servings (30g)
+                    </span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2 py-0.5">
-                  <span className="h-px w-8 bg-[#C7A35A]/60" />
-                  <span className="text-[#C7A35A] text-xs">❦</span>
-                  <span className="h-px w-8 bg-[#C7A35A]/60" />
-                </div>
-                <p className="text-xs sm:text-sm font-sans font-medium tracking-[0.2em] text-[#C7A35A] uppercase">
-                  {BRAND_INFO.flavour} · {BRAND_INFO.caffeine}
-                </p>
               </div>
 
-              {/* Right Flank: Overview Specs */}
-              <div className="absolute right-6 sm:right-10 md:right-14 lg:right-20 xl:right-24 top-1/2 -translate-y-1/2 max-w-[260px] sm:max-w-xs md:max-w-sm text-right space-y-3 z-30 pointer-events-auto flex flex-col items-end">
-                <div className="space-y-1.5">
-                  <span className="text-[11px] font-sans font-semibold tracking-[0.25em] text-[#C7A35A] uppercase block">
+              {/* Right Flank: Herbal Purity & Botanical Synergy Specs */}
+              <div className="hidden sm:flex absolute right-6 sm:right-10 md:right-14 lg:right-20 xl:right-24 top-1/2 -translate-y-1/2 max-w-[260px] sm:max-w-xs md:max-w-sm text-right z-30 pointer-events-auto flex-col items-end space-y-4">
+                <div className="space-y-2">
+                  <span className="text-xs font-sans font-black tracking-[0.3em] text-[#E5C989] uppercase block">
                     100% Herbal Purity
                   </span>
-                  <p className="text-xs sm:text-sm font-sans text-[#F4F0E5]/80 font-light leading-relaxed">
-                    Nine botanical synergy crafted for everyday moments of calmness and mental clarity.
+                  <p className="text-sm font-sans text-[#F4F0E5]/90 font-normal leading-relaxed">
+                    Nine botanical synergy crafted for everyday moments of calmness, relaxation, and mental clarity.
                   </p>
                 </div>
-                <div className="text-[11px] font-sans tracking-[0.2em] text-[#C7A35A] uppercase pt-1">
-                  15 Biodegradable Pyramid Bags
+                <div className="text-xs font-sans font-bold tracking-[0.2em] text-[#E5C989] uppercase">
+                  <span>Zero Caffeine · Pure Herbal</span>
                 </div>
               </div>
             </div>
@@ -533,36 +557,40 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
               }}
             >
               {/* Left Flank: Same FITINFUSE Brand Identity as Step 1 */}
-              <div className="absolute left-6 sm:left-10 md:left-14 lg:left-20 xl:left-24 top-1/2 -translate-y-1/2 max-w-[260px] sm:max-w-xs md:max-w-sm text-left space-y-3 z-30 pointer-events-auto">
-                <div className="space-y-1">
-                  <span className="text-[11px] sm:text-xs font-sans font-semibold tracking-[0.35em] text-[#C7A35A] uppercase block">
-                    {BRAND_INFO.name}
-                  </span>
-                  <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[#F4F0E5] tracking-tight leading-[1.08]">
-                    STRESS RELIEF <br />
-                    <span className="italic font-light text-[#E5C989]">INFUSION</span>
-                  </h2>
+              <div className="absolute left-4 sm:left-10 md:left-14 lg:left-20 xl:left-24 top-[38%] sm:top-[42%] md:top-1/2 -translate-y-1/2 max-w-[280px] sm:max-w-xs md:max-w-sm text-left z-30 pointer-events-auto">
+                <div className="space-y-3 bg-[#071C13]/70 sm:bg-transparent backdrop-blur-sm sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/20 -translate-y-2 sm:-translate-y-4 md:translate-y-0">
+                  <div className="space-y-1">
+                    <span className="text-[11px] sm:text-xs font-sans font-semibold tracking-[0.35em] text-[#C7A35A] uppercase block">
+                      {BRAND_INFO.name}
+                    </span>
+                    <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[#F4F0E5] tracking-tight leading-[1.08]">
+                      STRESS RELIEF <br />
+                      <span className="italic font-light text-[#E5C989]">INFUSION</span>
+                    </h2>
+                  </div>
+                  <div className="flex items-center gap-2 py-0.5">
+                    <span className="h-px w-8 bg-[#C7A35A]/60" />
+                    <span className="text-[#C7A35A] text-xs">❦</span>
+                    <span className="h-px w-8 bg-[#C7A35A]/60" />
+                  </div>
+                  <p className="text-xs sm:text-sm font-sans font-medium tracking-[0.2em] text-[#C7A35A] uppercase">
+                    {BRAND_INFO.flavour} · {BRAND_INFO.caffeine}
+                  </p>
                 </div>
-                <div className="flex items-center gap-2 py-0.5">
-                  <span className="h-px w-8 bg-[#C7A35A]/60" />
-                  <span className="text-[#C7A35A] text-xs">❦</span>
-                  <span className="h-px w-8 bg-[#C7A35A]/60" />
-                </div>
-                <p className="text-xs sm:text-sm font-sans font-medium tracking-[0.2em] text-[#C7A35A] uppercase">
-                  {BRAND_INFO.flavour} · {BRAND_INFO.caffeine}
-                </p>
               </div>
 
-              {/* Right Flank: Clean Centered CTA */}
-              <div className="absolute right-6 sm:right-10 md:right-14 lg:right-20 xl:right-24 top-1/2 -translate-y-1/2 max-w-[260px] sm:max-w-xs md:max-w-sm text-right space-y-4 z-30 pointer-events-auto flex flex-col items-end">
-                <button
-                  onClick={onOpenExplore}
-                  id="final-explore-cta-button"
-                  className="px-6 sm:px-8 py-3.5 sm:py-4 bg-[#C7A35A] hover:bg-[#DFC07B] text-[#071C13] rounded-full font-sans text-xs sm:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 shadow-[0_10px_30px_rgba(199,163,90,0.35)] hover:shadow-[0_15px_40px_rgba(199,163,90,0.5)] flex items-center gap-2.5 cursor-pointer transform hover:-translate-y-0.5 focus:outline-none"
-                >
-                  <span>EXPLORE THE INFUSION</span>
-                  <ArrowRight className="w-4 h-4 text-[#071C13]" />
-                </button>
+              {/* Right Flank: Clean Centered CTA (Bottom on Mobile, Centered Flank on Desktop) */}
+              <div className="absolute left-4 right-4 sm:left-auto sm:right-10 md:right-14 lg:right-20 xl:right-24 bottom-6 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 max-w-[calc(100vw-2rem)] sm:max-w-xs md:max-w-sm text-center sm:text-right z-30 pointer-events-auto flex flex-col items-center sm:items-end">
+                <div className="space-y-4 bg-[#071C13]/70 sm:bg-transparent backdrop-blur-sm sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/20 flex flex-col items-center sm:items-end w-full sm:w-auto">
+                  <button
+                    onClick={onOpenExplore}
+                    id="final-explore-cta-button"
+                    className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-white hover:bg-[#F4F0E5] text-[#071C13] rounded-full font-poppins text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase transition-all duration-300 shadow-[0_10px_30px_rgba(255,255,255,0.25)] hover:shadow-[0_15px_40px_rgba(255,255,255,0.4)] flex items-center justify-center gap-2.5 cursor-pointer transform hover:-translate-y-0.5 focus:outline-none"
+                  >
+                    <span>EXPLORE THE INFUSION</span>
+                    <ArrowRight className="w-4 h-4 text-[#071C13]" />
+                  </button>
+                </div>
               </div>
             </div>
 

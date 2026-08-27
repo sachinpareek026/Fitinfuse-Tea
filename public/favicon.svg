@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="teaLeafGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0D2F20" />
+      <stop offset="50%" stop-color="#1B4D36" />
+      <stop offset="100%" stop-color="#C7A35A" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C989" />
+      <stop offset="100%" stop-color="#C7A35A" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer glow circular backdrop -->
+  <circle cx="32" cy="32" r="30" fill="#071C13" stroke="#C7A35A" stroke-width="2" stroke-opacity="0.4" />
+  
+  <!-- Stylized Tea Leaf / Organic Herbal Leaf -->
+  <path d="M16 48 C 16 30, 24 16, 48 14 C 48 38, 38 48, 16 48 Z" fill="url(#teaLeafGrad)" stroke="url(#goldGrad)" stroke-width="2" stroke-linejoin="round" />
+  
+  <!-- Central Leaf Vein -->
+  <path d="M16 48 C 24 40, 34 30, 48 14" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round" />
+  
+  <!-- Side Veins -->
+  <path d="M26 38 C 23 32, 21 28, 20 25" stroke="url(#goldGrad)" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.7" />
+  <path d="M33 30 C 37 32, 41 35, 43 38" stroke="url(#goldGrad)" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.7" />
+  <path d="M37 25 C 33 21, 29 18, 28 17" stroke="url(#goldGrad)" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.7" />
+  
+  <!-- Small secondary dewdrop/sparkle in gold -->
+  <circle cx="43" cy="18" r="2" fill="#E5C989" />
+</svg>

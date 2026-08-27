@@ -1,37 +1,55 @@
 @import "tailwindcss";
 
-@theme {
-  --font-serif: "Cormorant Garamond", Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --color-forest-dark: #071C13;
-  --color-forest-deep: #0D2F20;
-  --color-forest-mid: #14422D;
-  --color-gold: #C7A35A;
-  --color-gold-light: #DFC07B;
-  --color-cream: #F4F0E5;
-  --color-cream-soft: #FAF8F2;
+@layer base {
+  html {
+    font-family: 'Poppins', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  /* Boris Neoclassical Editorial Serif (Prata, Bodoni Moda, DM Serif Display) */
+  .font-boris {
+    font-family: 'Prata', 'Bodoni Moda', 'DM Serif Display', 'Playfair Display', Georgia, serif;
+  }
+
+  /* Amavera / High-Fashion Editorial Modern Sans (Syne / Tenor Sans / Marcellus) */
+  .font-display, .font-amavera, .font-tenor {
+    font-family: 'Tenor Sans', 'Syne', 'Marcellus', sans-serif;
+  }
+  .font-serif {
+    font-family: 'Cormorant Garamond', 'Italiana', 'Bodoni Moda', Georgia, serif;
+  }
+
+  .font-cormorant {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .font-cinzel {
+    font-family: 'Cinzel', serif;
+  }
+
+  /* Refined Modern Clean Sans (Poppins / Plus Jakarta Sans) */
+  .font-sans {
+    font-family: 'Poppins', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
 }
 
-:root {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: #071C13;
-  color: #F4F0E5;
+/* 3D floating animation for idle canister levitation */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
-body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: #071C13;
-  color: #F4F0E5;
-  margin: 0;
-  padding: 0;
-}
-
-.font-serif {
-  font-family: "Cormorant Garamond", Georgia, Cambria, "Times New Roman", Times, serif;
-}
-
-.font-sans {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
 }
 
 /* Custom smooth scrollbar */
