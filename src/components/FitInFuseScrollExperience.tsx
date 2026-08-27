@@ -288,8 +288,8 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
               }}
             >
               {/* Left Flank: Main Title, Brand & Purity Badges */}
-              <div className="absolute left-4 sm:left-10 md:left-14 lg:left-20 xl:left-24 bottom-6 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 max-w-[calc(100vw-2rem)] sm:max-w-xs md:max-w-sm lg:max-w-md text-center sm:text-left z-30 pointer-events-auto flex flex-col items-center sm:items-start">
-                <div className="space-y-3 bg-[#071C13]/85 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/30 shadow-2xl sm:shadow-none w-full sm:w-auto">
+              <div className="absolute left-4 sm:left-10 md:left-14 lg:left-20 xl:left-24 bottom-12 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 max-w-[calc(100vw-2rem)] sm:max-w-xs md:max-w-sm lg:max-w-md text-center sm:text-left z-30 pointer-events-auto flex flex-col items-center sm:items-start">
+                <div className="space-y-3 bg-[#071C13]/85 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/30 shadow-2xl sm:shadow-none w-full sm:w-auto -translate-y-2 sm:translate-y-0">
                   <div className="space-y-1">
                     <span className="text-[11px] sm:text-xs font-tin-spec font-medium text-[#E5C989] uppercase block drop-shadow-sm">
                       {BRAND_INFO.name}
@@ -342,18 +342,18 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
             {/* ---------------------------------------------------- */}
             <div
               id="step-2-peppermint-reveal"
-              className="absolute left-4 sm:left-8 md:left-12 lg:left-16 xl:left-24 top-1/2 max-w-[280px] sm:max-w-xs md:max-w-sm lg:max-w-md pointer-events-auto transition-all duration-200"
+              className="absolute left-4 sm:left-8 md:left-12 lg:left-16 xl:left-24 bottom-10 sm:bottom-auto sm:top-1/2 max-w-[calc(100vw-2rem)] sm:max-w-xs md:max-w-sm lg:max-w-md pointer-events-auto transition-all duration-200"
               style={{
                 opacity: step2Opacity,
-                transform: `translate(${step2X}px, -50%)`,
+                transform: `translate(${step2X}px, 0) sm:translate(${step2X}px, -50%)`,
                 visibility: step2Opacity > 0.01 ? 'visible' : 'hidden',
               }}
             >
-              <div className="space-y-3.5 sm:space-y-4 bg-[#071C13]/70 sm:bg-transparent backdrop-blur-sm sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/20">
+              <div className="space-y-3 sm:space-y-4 bg-[#071C13]/85 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/25 shadow-xl sm:shadow-none">
                 {/* Gold Circle Badge with Leaf */}
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-[#C7A35A] p-0.5 sm:p-1 flex items-center justify-center bg-[#071C13] shadow-[0_0_20px_rgba(199,163,90,0.2)]">
+                <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-[#C7A35A] p-0.5 sm:p-1 flex items-center justify-center bg-[#071C13] shadow-[0_0_20px_rgba(199,163,90,0.2)]">
                   <div className="w-full h-full rounded-full border border-[#C7A35A]/40 flex items-center justify-center bg-[#0D2F20]">
-                    <Leaf className="w-5 h-5 sm:w-6 sm:h-6 text-[#C7A35A]" />
+                    <Leaf className="w-4 h-4 sm:w-6 sm:h-6 text-[#C7A35A]" />
                   </div>
                 </div>
 
@@ -384,18 +384,18 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
             {/* ---------------------------------------------------- */}
             <div
               id="step-3-botanicals-reveal"
-              className="absolute right-4 sm:right-8 md:right-12 lg:right-16 xl:right-24 top-1/2 max-w-[280px] sm:max-w-xs md:max-w-sm lg:max-w-md pointer-events-auto transition-all duration-200"
+              className="absolute right-4 sm:right-8 md:right-12 lg:right-16 xl:right-24 bottom-10 sm:bottom-auto sm:top-1/2 max-w-[calc(100vw-2rem)] sm:max-w-xs md:max-w-sm lg:max-w-md pointer-events-auto transition-all duration-200"
               style={{
                 opacity: step3Opacity,
-                transform: `translate(${step3X}px, -50%)`,
+                transform: `translate(${step3X}px, 0) sm:translate(${step3X}px, -50%)`,
                 visibility: step3Opacity > 0.01 ? 'visible' : 'hidden',
               }}
             >
-              <div className="space-y-3.5 sm:space-y-4 text-left sm:text-right flex flex-col sm:items-end bg-[#071C13]/70 sm:bg-transparent backdrop-blur-sm sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/20">
+              <div className="space-y-3 sm:space-y-4 text-left sm:text-right flex flex-col sm:items-end bg-[#071C13]/85 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/25 shadow-xl sm:shadow-none">
                 {/* Gold Circle Badge with Blossom */}
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-[#C7A35A] p-0.5 sm:p-1 flex items-center justify-center bg-[#071C13] shadow-[0_0_20px_rgba(199,163,90,0.2)]">
+                <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-[#C7A35A] p-0.5 sm:p-1 flex items-center justify-center bg-[#071C13] shadow-[0_0_20px_rgba(199,163,90,0.2)]">
                   <div className="w-full h-full rounded-full border border-[#C7A35A]/40 flex items-center justify-center bg-[#0D2F20]">
-                    <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-[#C7A35A]" />
+                    <Sparkles className="w-4 h-4 sm:w-6 sm:h-6 text-[#C7A35A]" />
                   </div>
                 </div>
 
@@ -432,18 +432,18 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
             {/* ---------------------------------------------------- */}
             <div
               id="step-4-no-caffeine-reveal"
-              className="absolute left-4 sm:left-8 md:left-12 lg:left-16 xl:left-24 top-1/2 max-w-[280px] sm:max-w-xs md:max-w-sm lg:max-w-md pointer-events-auto transition-all duration-200"
+              className="absolute left-4 sm:left-8 md:left-12 lg:left-16 xl:left-24 bottom-10 sm:bottom-auto sm:top-1/2 max-w-[calc(100vw-2rem)] sm:max-w-xs md:max-w-sm lg:max-w-md pointer-events-auto transition-all duration-200"
               style={{
                 opacity: step4Opacity,
-                transform: `translate(${step4X}px, -50%)`,
+                transform: `translate(${step4X}px, 0) sm:translate(${step4X}px, -50%)`,
                 visibility: step4Opacity > 0.01 ? 'visible' : 'hidden',
               }}
             >
-              <div className="space-y-3.5 sm:space-y-4 bg-[#071C13]/70 sm:bg-transparent backdrop-blur-sm sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/20">
+              <div className="space-y-3 sm:space-y-4 bg-[#071C13]/85 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/25 shadow-xl sm:shadow-none">
                 {/* Gold Circle Badge with Steaming Cup */}
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-[#C7A35A] p-0.5 sm:p-1 flex items-center justify-center bg-[#071C13] shadow-[0_0_20px_rgba(199,163,90,0.2)]">
+                <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-[#C7A35A] p-0.5 sm:p-1 flex items-center justify-center bg-[#071C13] shadow-[0_0_20px_rgba(199,163,90,0.2)]">
                   <div className="w-full h-full rounded-full border border-[#C7A35A]/40 flex items-center justify-center bg-[#0D2F20]">
-                    <Coffee className="w-5 h-5 sm:w-6 sm:h-6 text-[#C7A35A]" />
+                    <Coffee className="w-4 h-4 sm:w-6 sm:h-6 text-[#C7A35A]" />
                   </div>
                 </div>
 
@@ -473,14 +473,14 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
             {/* ---------------------------------------------------- */}
             <div
               id="step-5-every-moment-reveal"
-              className="absolute right-4 sm:right-8 md:right-12 lg:right-16 xl:right-24 top-1/2 max-w-[280px] sm:max-w-xs md:max-w-sm lg:max-w-md pointer-events-auto transition-all duration-200"
+              className="absolute right-4 sm:right-8 md:right-12 lg:right-16 xl:right-24 bottom-10 sm:bottom-auto sm:top-1/2 max-w-[calc(100vw-2rem)] sm:max-w-xs md:max-w-sm lg:max-w-md pointer-events-auto transition-all duration-200"
               style={{
                 opacity: step5Opacity,
-                transform: `translate(${step5X}px, -50%)`,
+                transform: `translate(${step5X}px, 0) sm:translate(${step5X}px, -50%)`,
                 visibility: step5Opacity > 0.01 ? 'visible' : 'hidden',
               }}
             >
-              <div className="space-y-3.5 sm:space-y-4 text-left sm:text-right flex flex-col sm:items-end bg-[#071C13]/70 sm:bg-transparent backdrop-blur-sm sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/20">
+              <div className="space-y-3 sm:space-y-4 text-left sm:text-right flex flex-col sm:items-end bg-[#071C13]/85 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/25 shadow-xl sm:shadow-none">
                 {/* Gold Circle Badge with Mindful Calm Icon */}
                 <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-[#C7A35A] p-0.5 sm:p-1 flex items-center justify-center bg-[#071C13] shadow-[0_0_20px_rgba(199,163,90,0.2)]">
                   <div className="w-full h-full rounded-full border border-[#C7A35A]/40 flex items-center justify-center bg-[#0D2F20]">
@@ -557,8 +557,8 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
               }}
             >
               {/* Left Flank: Same FITINFUSE Brand Identity as Step 1 */}
-              <div className="absolute left-4 sm:left-10 md:left-14 lg:left-20 xl:left-24 top-[38%] sm:top-[42%] md:top-1/2 -translate-y-1/2 max-w-[280px] sm:max-w-xs md:max-w-sm text-left z-30 pointer-events-auto">
-                <div className="space-y-3 bg-[#071C13]/70 sm:bg-transparent backdrop-blur-sm sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/20 -translate-y-2 sm:-translate-y-4 md:translate-y-0">
+              <div className="absolute left-4 sm:left-10 md:left-14 lg:left-20 xl:left-24 bottom-10 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 max-w-[calc(100vw-2rem)] sm:max-w-xs md:max-w-sm text-left z-30 pointer-events-auto">
+                <div className="space-y-3 bg-[#071C13]/85 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/25 shadow-xl sm:shadow-none">
                   <div className="space-y-1">
                     <span className="text-[11px] sm:text-xs font-tin-spec font-medium text-[#E5C989] uppercase block">
                       {BRAND_INFO.name}
@@ -587,7 +587,7 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
                     id="final-explore-cta-button"
                     className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-white hover:bg-[#F4F0E5] text-[#071C13] rounded-full font-tin-spec text-xs sm:text-sm font-semibold uppercase transition-all duration-300 shadow-[0_10px_30px_rgba(255,255,255,0.25)] hover:shadow-[0_15px_40px_rgba(255,255,255,0.4)] flex items-center justify-center gap-2.5 cursor-pointer transform hover:-translate-y-0.5 focus:outline-none"
                   >
-                    <span>EXPLORE THE INFUSION</span>
+                    <span>BUY NOW</span>
                     <ArrowRight className="w-4 h-4 text-[#071C13]" />
                   </button>
                 </div>
