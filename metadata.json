@@ -1,0 +1,6 @@
+{
+  "name": "FitInFuse",
+  "description": "Leaf of Fitness — Premium Herbal Wellness Infusion with 9 botanicals for quiet calm and mindful slowing down.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
