@@ -2,39 +2,38 @@
 
 @layer base {
   html {
-    font-family: 'Poppins', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     scroll-behavior: smooth;
     color-scheme: dark;
   }
 
-  /* Boris Neoclassical Editorial Serif (Prata, Bodoni Moda, DM Serif Display) */
-  .font-boris {
-    font-family: 'Prata', 'Bodoni Moda', 'DM Serif Display', 'Playfair Display', Georgia, serif;
+  /* Canister Hero Headline Roman Serif ("STRESS RELIEF") */
+  .font-tin-title, .font-cinzel {
+    font-family: 'Cinzel', 'Marcellus', 'Cormorant Garamond', Georgia, serif;
+    letter-spacing: 0.08em;
   }
 
-  /* Amavera / High-Fashion Editorial Modern Sans (Syne / Tenor Sans / Marcellus) */
-  .font-display, .font-amavera, .font-tenor {
-    font-family: 'Tenor Sans', 'Syne', 'Marcellus', sans-serif;
+  /* Canister Italic Infusion Flourish ("INFUSION") */
+  .font-tin-italic, .font-cormorant {
+    font-family: 'Cormorant Garamond', 'Bodoni Moda', 'Playfair Display', Georgia, serif;
+    font-style: italic;
   }
+
+  /* Canister Product Specifications & Subtitles ("PEPPERMINT FLAVOUR · NO CAFFEINE") */
+  .font-tin-spec, .font-tenor {
+    font-family: 'Tenor Sans', 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* General Editorial Serif */
   .font-serif {
-    font-family: 'Cormorant Garamond', 'Italiana', 'Bodoni Moda', Georgia, serif;
+    font-family: 'Cinzel', 'Cormorant Garamond', 'Marcellus', Georgia, serif;
   }
 
-  .font-cormorant {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-  }
-
-  .font-cinzel {
-    font-family: 'Cinzel', serif;
-  }
-
-  /* Refined Modern Clean Sans (Poppins / Plus Jakarta Sans) */
+  /* Clean Modern Body Sans */
   .font-sans {
-    font-family: 'Poppins', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  }
-
-  .font-poppins {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   }
 }
 
