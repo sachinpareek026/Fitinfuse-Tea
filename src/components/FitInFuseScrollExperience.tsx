@@ -261,21 +261,21 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] sm:w-[340px] h-[240px] sm:h-[340px] bg-[#6F8F62]/18 rounded-full blur-2xl pointer-events-none" />
           </div>
 
-          {/* B. MAIN PRODUCT VISUAL (Full-Fit in Dead Center between Header Bottom Line and Screen Bottom) */}
+          {/* B. MAIN PRODUCT VISUAL (Full-Fit starting right beneath header on mobile, centered on desktop) */}
           <div 
             id="main-product-center-stage"
-            className="relative z-20 flex-1 w-full max-h-screen pt-1 sm:pt-4 pb-16 sm:pb-4 px-2 sm:px-8 flex items-start sm:items-center justify-center pointer-events-none"
+            className="relative z-20 flex-1 w-full h-full pt-16 sm:pt-20 pb-4 px-2 sm:px-8 flex items-start sm:items-center justify-center pointer-events-none"
           >
             {/* Center Product Anchor - Pure Center Stage with 3D perspective and animated rotation */}
-            <div className="relative flex items-center justify-center select-none w-full h-full max-w-5xl mx-auto [perspective:1200px]">
+            <div className="relative flex items-start sm:items-center justify-center select-none w-full h-full max-w-5xl mx-auto [perspective:1200px]">
               <div 
-                className="relative flex items-center justify-center w-full h-full transition-transform duration-100 ease-out will-change-transform animate-float-slow"
+                className="relative flex items-start sm:items-center justify-center w-full h-full transition-transform duration-100 ease-out will-change-transform animate-float-slow"
                 style={{
                   transform: `rotateY(${productRotationY}deg) rotateZ(${productTiltZ}deg)`,
                   transformStyle: 'preserve-3d',
                 }}
               >
-                <picture>
+                <picture className="flex items-start sm:items-center justify-center h-full">
                   <source srcSet="/product-canister.webp" type="image/webp" />
                   <img
                     id="fitinfuse-hero-canister"
@@ -287,7 +287,7 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
                     decoding="sync"
                     width={707}
                     height={1000}
-                    className="h-full max-h-[58vh] sm:max-h-[calc(100vh-6rem)] w-auto max-w-[95vw] sm:max-w-[90vw] object-contain drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)] pointer-events-auto transition-all duration-300 origin-top sm:origin-center translate-y-0 scale-[1.08] sm:scale-100 hover:scale-[1.12] md:hover:scale-[1.03]"
+                    className="h-full max-h-[64vh] sm:max-h-[calc(100vh-6rem)] w-auto max-w-[96vw] sm:max-w-[90vw] object-contain object-top sm:object-center drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)] pointer-events-auto transition-all duration-300 origin-top sm:origin-center mt-1 sm:mt-0 scale-[1.22] sm:scale-100 hover:scale-[1.26] md:hover:scale-[1.03]"
                     onError={(e) => {
                       const target = e.currentTarget;
                       if (!target.src.includes('1000568378-removebg-preview.png')) {
@@ -316,8 +316,8 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
             >
               <div className="w-full max-w-7xl mx-auto h-full px-6 sm:px-8 lg:px-12 relative flex items-center justify-between pointer-events-none">
                 {/* Left Flank: Main Title, Brand & Purity Badges (Aligned with header left edge) */}
-                <div className="absolute left-6 sm:left-8 lg:left-12 right-6 sm:right-auto bottom-8 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 max-w-sm sm:max-w-xs md:max-w-sm lg:max-w-md mx-auto sm:mx-0 text-center sm:text-left z-30 pointer-events-auto flex flex-col items-center sm:items-start">
-                  <div className="space-y-3 bg-[#071C13]/85 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/30 shadow-2xl sm:shadow-none w-full sm:w-auto">
+                <div className="absolute left-4 sm:left-8 lg:left-12 right-4 sm:right-auto bottom-4 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 max-w-sm sm:max-w-xs md:max-w-sm lg:max-w-md mx-auto sm:mx-0 text-center sm:text-left z-30 pointer-events-auto flex flex-col items-center sm:items-start">
+                  <div className="space-y-2.5 sm:space-y-3 bg-[#071C13]/90 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-3.5 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/30 shadow-2xl sm:shadow-none w-full sm:w-auto">
                     <div className="space-y-1">
                       <span className="text-[11px] sm:text-xs font-tin-spec font-medium text-[#E5C989] uppercase block tracking-widest drop-shadow-sm">
                         {BRAND_INFO.name}
@@ -379,8 +379,8 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
               }}
             >
               <div className="w-full max-w-7xl mx-auto h-full px-6 sm:px-8 lg:px-12 relative flex items-center pointer-events-none">
-                <div className="absolute left-6 sm:left-8 lg:left-12 right-6 sm:right-auto bottom-8 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 max-w-sm sm:max-w-xs md:max-w-sm lg:max-w-md mx-auto sm:mx-0 text-center sm:text-left z-30 pointer-events-auto flex flex-col items-center sm:items-start">
-                  <div className="space-y-3 bg-[#071C13]/85 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/30 shadow-2xl sm:shadow-none w-full sm:w-auto text-center sm:text-left flex flex-col items-center sm:items-start">
+                <div className="absolute left-4 sm:left-8 lg:left-12 right-4 sm:right-auto bottom-4 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 max-w-sm sm:max-w-xs md:max-w-sm lg:max-w-md mx-auto sm:mx-0 text-center sm:text-left z-30 pointer-events-auto flex flex-col items-center sm:items-start">
+                  <div className="space-y-2.5 sm:space-y-3 bg-[#071C13]/90 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-3.5 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/30 shadow-2xl sm:shadow-none w-full sm:w-auto text-center sm:text-left flex flex-col items-center sm:items-start">
                     {/* Gold Circle Badge with Leaf */}
                     <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-[#C7A35A] p-0.5 sm:p-1 flex items-center justify-center bg-[#071C13] shadow-[0_0_20px_rgba(199,163,90,0.2)]">
                       <div className="w-full h-full rounded-full border border-[#C7A35A]/40 flex items-center justify-center bg-[#0D2F20]">
@@ -428,8 +428,8 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
               }}
             >
               <div className="w-full max-w-7xl mx-auto h-full px-6 sm:px-8 lg:px-12 relative flex items-center justify-end pointer-events-none">
-                <div className="absolute right-6 sm:right-8 lg:right-12 left-6 sm:left-auto bottom-8 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 max-w-sm sm:max-w-xs md:max-w-sm lg:max-w-md mx-auto sm:mx-0 text-center sm:text-right z-30 pointer-events-auto flex flex-col items-center sm:items-end">
-                  <div className="space-y-3 bg-[#071C13]/85 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/30 shadow-2xl sm:shadow-none w-full sm:w-auto text-center sm:text-right flex flex-col items-center sm:items-end">
+                <div className="absolute right-4 sm:right-8 lg:right-12 left-4 sm:left-auto bottom-4 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 max-w-sm sm:max-w-xs md:max-w-sm lg:max-w-md mx-auto sm:mx-0 text-center sm:text-right z-30 pointer-events-auto flex flex-col items-center sm:items-end">
+                  <div className="space-y-2.5 sm:space-y-3 bg-[#071C13]/90 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-3.5 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/30 shadow-2xl sm:shadow-none w-full sm:w-auto text-center sm:text-right flex flex-col items-center sm:items-end">
                     {/* Gold Circle Badge with Blossom */}
                     <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-[#C7A35A] p-0.5 sm:p-1 flex items-center justify-center bg-[#071C13] shadow-[0_0_20px_rgba(199,163,90,0.2)]">
                       <div className="w-full h-full rounded-full border border-[#C7A35A]/40 flex items-center justify-center bg-[#0D2F20]">
@@ -483,8 +483,8 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
               }}
             >
               <div className="w-full max-w-7xl mx-auto h-full px-6 sm:px-8 lg:px-12 relative flex items-center pointer-events-none">
-                <div className="absolute left-6 sm:left-8 lg:left-12 right-6 sm:right-auto bottom-8 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 max-w-sm sm:max-w-xs md:max-w-sm lg:max-w-md mx-auto sm:mx-0 text-center sm:text-left z-30 pointer-events-auto flex flex-col items-center sm:items-start">
-                  <div className="space-y-3 bg-[#071C13]/85 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/30 shadow-2xl sm:shadow-none w-full sm:w-auto text-center sm:text-left flex flex-col items-center sm:items-start">
+                <div className="absolute left-4 sm:left-8 lg:left-12 right-4 sm:right-auto bottom-4 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 max-w-sm sm:max-w-xs md:max-w-sm lg:max-w-md mx-auto sm:mx-0 text-center sm:text-left z-30 pointer-events-auto flex flex-col items-center sm:items-start">
+                  <div className="space-y-2.5 sm:space-y-3 bg-[#071C13]/90 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-3.5 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/30 shadow-2xl sm:shadow-none w-full sm:w-auto text-center sm:text-left flex flex-col items-center sm:items-start">
                     {/* Gold Circle Badge with Steaming Cup */}
                     <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-[#C7A35A] p-0.5 sm:p-1 flex items-center justify-center bg-[#071C13] shadow-[0_0_20px_rgba(199,163,90,0.2)]">
                       <div className="w-full h-full rounded-full border border-[#C7A35A]/40 flex items-center justify-center bg-[#0D2F20]">
@@ -531,8 +531,8 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
               }}
             >
               <div className="w-full max-w-7xl mx-auto h-full px-6 sm:px-8 lg:px-12 relative flex items-center justify-end pointer-events-none">
-                <div className="absolute right-6 sm:right-8 lg:right-12 left-6 sm:left-auto bottom-8 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 max-w-sm sm:max-w-xs md:max-w-sm lg:max-w-md mx-auto sm:mx-0 text-center sm:text-right z-30 pointer-events-auto flex flex-col items-center sm:items-end">
-                  <div className="space-y-3 bg-[#071C13]/85 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/30 shadow-2xl sm:shadow-none w-full sm:w-auto text-center sm:text-right flex flex-col items-center sm:items-end">
+                <div className="absolute right-4 sm:right-8 lg:right-12 left-4 sm:left-auto bottom-4 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 max-w-sm sm:max-w-xs md:max-w-sm lg:max-w-md mx-auto sm:mx-0 text-center sm:text-right z-30 pointer-events-auto flex flex-col items-center sm:items-end">
+                  <div className="space-y-2.5 sm:space-y-3 bg-[#071C13]/90 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-3.5 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/30 shadow-2xl sm:shadow-none w-full sm:w-auto text-center sm:text-right flex flex-col items-center sm:items-end">
                     {/* Gold Circle Badge with Mindful Calm Icon */}
                     <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-[#C7A35A] p-0.5 sm:p-1 flex items-center justify-center bg-[#071C13] shadow-[0_0_20px_rgba(199,163,90,0.2)]">
                       <div className="w-full h-full rounded-full border border-[#C7A35A]/40 flex items-center justify-center bg-[#0D2F20]">
