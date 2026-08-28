@@ -1,6 +1,6 @@
 import React from 'react';
 import { BRAND_INFO } from '../data/content';
-import { Instagram, Youtube, Mail, Phone, Globe, ShieldCheck } from 'lucide-react';
+import { Instagram, Youtube, MessageCircle, Mail, Phone, Globe, ShieldCheck } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -12,15 +12,15 @@ export const Footer: React.FC = () => {
           
           {/* Brand Column */}
           <div className="md:col-span-5 space-y-6">
-            {/* Full-Size Transparent Prominent Logo Showcase */}
-            <div className="w-full max-w-[280px] sm:max-w-[340px] md:max-w-[380px] flex items-center">
+            {/* Full-Size Transparent Prominent Logo Showcase - Left-Aligned & Sized Up */}
+            <div className="w-full max-w-[320px] sm:max-w-[380px] md:max-w-[420px] flex items-center justify-start -ml-1 sm:-ml-2">
               <img
                 src="/brand-logo.png?v=20260828"
                 alt="FitInFuse Emblem & Identity"
                 referrerPolicy="no-referrer"
                 loading="lazy"
                 decoding="async"
-                className="w-full h-auto max-h-40 sm:max-h-48 object-contain pr-[200px] transition-transform duration-300 hover:scale-105"
+                className="w-auto h-24 sm:h-28 md:h-32 object-contain object-left transition-transform duration-300 hover:scale-105"
               />
             </div>
 
@@ -31,7 +31,16 @@ export const Footer: React.FC = () => {
             {/* Social Icons */}
             <div className="flex items-center gap-3 pt-1">
               <a
-                href="https://instagram.com"
+                href="https://wa.link/rbsojf"
+                target="_blank"
+                rel="noreferrer"
+                className="w-9 h-9 rounded-full border border-[#123524]/20 flex items-center justify-center text-[#123524] hover:bg-[#25D366] hover:text-white hover:border-[#25D366] transition-all"
+                aria-label="FitInFuse on WhatsApp"
+              >
+                <MessageCircle className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.instagram.com/fitinfuse.in/"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 rounded-full border border-[#123524]/20 flex items-center justify-center text-[#123524] hover:bg-[#123524] hover:text-[#FAF9F5] transition-colors"
@@ -105,6 +114,12 @@ export const Footer: React.FC = () => {
                 </div>
 
                 <div className="flex items-center gap-2.5 pt-1">
+                  <MessageCircle className="w-3.5 h-3.5 text-[#25D366]" />
+                  <a href="https://wa.link/rbsojf" target="_blank" rel="noopener noreferrer" className="hover:text-[#123524] text-[#123524] font-medium transition-colors">
+                    Chat on WhatsApp
+                  </a>
+                </div>
+                <div className="flex items-center gap-2.5">
                   <Mail className="w-3.5 h-3.5 text-[#6F8F62]" />
                   <a href={`mailto:${BRAND_INFO.contact.email}`} className="hover:text-[#123524] transition-colors">
                     {BRAND_INFO.contact.email}

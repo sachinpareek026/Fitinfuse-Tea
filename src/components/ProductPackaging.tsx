@@ -60,6 +60,10 @@ export const ProductPackaging: React.FC<ProductPackagingProps> = ({
               src={imageSrc}
               alt="FitInFuse Stress Relief Infusion Canister"
               referrerPolicy="no-referrer"
+              loading="lazy"
+              decoding="async"
+              width={707}
+              height={1000}
               className={`${imgHeightClass} w-auto object-contain drop-shadow-[0_25px_35px_rgba(18,53,36,0.3)] transition-all`}
               onError={() => {
                 // If the default path is not found in static root, fallback to styled SVG canister

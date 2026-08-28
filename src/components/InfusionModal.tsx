@@ -91,6 +91,10 @@ export const InfusionModal: React.FC<InfusionModalProps> = ({ isOpen, onClose })
                   src="/product-canister.webp"
                   alt="FitInFuse Canister"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
+                  width={96}
+                  height={144}
                   className="w-24 h-36 object-contain"
                   onError={(e) => {
                     e.currentTarget.src = '/product-canister.png?v=20260828';
@@ -149,6 +153,10 @@ export const InfusionModal: React.FC<InfusionModalProps> = ({ isOpen, onClose })
                         src={item.image}
                         alt={item.name}
                         referrerPolicy="no-referrer"
+                        loading="lazy"
+                        decoding="async"
+                        width={40}
+                        height={40}
                         onError={(e) => {
                           if (item.fallbackImage && e.currentTarget.src !== item.fallbackImage) {
                             e.currentTarget.src = item.fallbackImage;

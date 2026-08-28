@@ -15,6 +15,8 @@ export const Hero: React.FC<HeroProps> = ({ onAddToCart }) => {
         <img 
           src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=1600&q=80" 
           alt="Botanical background" 
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover filter grayscale contrast-125"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#FAF9F5] via-[#FAF9F5]/80 to-transparent" />

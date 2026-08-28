@@ -285,6 +285,8 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
                     loading="eager"
                     fetchPriority="high"
                     decoding="sync"
+                    width={707}
+                    height={1000}
                     className="h-full max-h-[calc(100vh-14rem)] sm:max-h-[calc(100vh-6rem)] w-auto max-w-[90vw] object-contain drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)] pointer-events-auto transition-all duration-300 origin-center -translate-y-12 sm:translate-y-0 scale-[0.88] md:scale-100 hover:scale-[0.91] md:hover:scale-[1.03]"
                     onError={(e) => {
                       const target = e.currentTarget;
