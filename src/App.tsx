@@ -8,16 +8,12 @@ import { BrewingRitual } from './components/BrewingRitual';
 import { Testimonials } from './components/Testimonials';
 import { Newsletter } from './components/Newsletter';
 import { Footer } from './components/Footer';
-import { warmupSiteAssets } from './utils/assetPreloader';
 
 export default function App() {
   const [isExploreOpen, setIsExploreOpen] = useState(false);
   const [isRitualReached, setIsRitualReached] = useState(false);
 
   useEffect(() => {
-    // Warm up all site images in the background immediately upon user entering
-    warmupSiteAssets();
-
     const handleScroll = () => {
       // Check for the "HERBAL INFUSION RITUAL" section (id="story" or id="sourcing-story")
       const ritualStoryEl = document.getElementById('story') || document.getElementById('sourcing-story');

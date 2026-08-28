@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { globalPreloadedSet } from '../utils/assetPreloader';
 
 interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string;
@@ -11,6 +10,9 @@ interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> 
   aspectRatio?: string;
 }
 
+// Global cache of loaded URLs to prevent re-fading already cached assets
+const loadedImageUrls = new Set<string>();
+
 export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   src,
   fallbackSrc,
@@ -21,20 +23,15 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   aspectRatio,
   ...props
 }) => {
-  const isPreloaded = globalPreloadedSet.has(src);
-  const [isInView, setIsInView] = useState<boolean>(priority || isPreloaded);
-  const [currentSrc, setCurrentSrc] = useState<string>(priority || isPreloaded ? src : '');
-  const [isLoaded, setIsLoaded] = useState<boolean>(() => isPreloaded);
+  const [isInView, setIsInView] = useState<boolean>(priority);
+  const [currentSrc, setCurrentSrc] = useState<string>(priority ? src : '');
+  const [isLoaded, setIsLoaded] = useState<boolean>(() => loadedImageUrls.has(src));
   const [hasError, setHasError] = useState<boolean>(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
-  // 1. IntersectionObserver for smooth pre-loading 800px before viewport
+  // 1. IntersectionObserver for smooth pre-loading 400px before viewport
   useEffect(() => {
-    if (priority || isInView || isPreloaded) {
-      if (!isInView) setIsInView(true);
-      if (!currentSrc) setCurrentSrc(src);
-      return;
-    }
+    if (priority || isInView) return;
 
     const target = containerRef.current;
     if (!target) return;
@@ -51,7 +48,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
           });
         },
         {
-          rootMargin: '800px 0px', // Starts pre-loading 800px before entering viewport
+          rootMargin: '450px 0px', // Starts loading 450px before entering viewport
           threshold: 0.01,
         }
       );
@@ -63,21 +60,21 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
       setIsInView(true);
       setCurrentSrc(src);
     }
-  }, [src, priority, isInView, isPreloaded, currentSrc]);
+  }, [src, priority, isInView]);
 
   // Sync if src changes
   useEffect(() => {
-    if (isInView || priority || globalPreloadedSet.has(src)) {
+    if (isInView || priority) {
       setCurrentSrc(src);
       setHasError(false);
-      if (globalPreloadedSet.has(src)) {
+      if (loadedImageUrls.has(src)) {
         setIsLoaded(true);
       }
     }
   }, [src, isInView, priority]);
 
   const handleLoad = () => {
-    globalPreloadedSet.add(currentSrc || src);
+    loadedImageUrls.add(currentSrc || src);
     setIsLoaded(true);
   };
 
@@ -112,7 +109,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
           decoding={priority ? 'sync' : 'async'}
           onLoad={handleLoad}
           onError={handleError}
-          className={`${className} transition-opacity duration-300 ease-out ${
+          className={`${className} transition-opacity duration-500 ease-out ${
             isLoaded ? 'opacity-100' : 'opacity-0'
           }`}
           {...props}
@@ -121,4 +118,3 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
     </div>
   );
 };
-
