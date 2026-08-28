@@ -264,7 +264,7 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
           {/* B. MAIN PRODUCT VISUAL (Full-Fit starting right beneath header on mobile, centered on desktop) */}
           <div 
             id="main-product-center-stage"
-            className="relative z-20 flex-1 w-full h-full pt-16 sm:pt-20 pb-4 px-2 sm:px-8 flex items-start sm:items-center justify-center pointer-events-none"
+            className="relative z-20 flex-1 w-full h-full pt-[62px] sm:pt-20 pb-2 sm:pb-4 px-2 sm:px-8 flex items-start sm:items-center justify-center pointer-events-none"
           >
             {/* Center Product Anchor - Pure Center Stage with 3D perspective and animated rotation */}
             <div className="relative flex items-start sm:items-center justify-center select-none w-full h-full max-w-5xl mx-auto [perspective:1200px]">
@@ -287,7 +287,7 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
                     decoding="sync"
                     width={707}
                     height={1000}
-                    className="h-full max-h-[52vh] sm:max-h-[calc(100vh-6rem)] w-auto max-w-[90vw] sm:max-w-[90vw] object-contain object-top sm:object-center drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)] pointer-events-auto transition-all duration-300 origin-top sm:origin-center mt-1 sm:mt-0 scale-[1.05] sm:scale-100 hover:scale-[1.08] md:hover:scale-[1.03]"
+                    className="h-full max-h-[60vh] sm:max-h-[calc(100vh-6rem)] w-auto max-w-[94vw] sm:max-w-[90vw] object-contain object-top sm:object-center drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)] pointer-events-auto transition-all duration-300 origin-top sm:origin-center -mt-1 sm:mt-0 scale-[1.18] sm:scale-100 hover:scale-[1.22] md:hover:scale-[1.03]"
                     onError={(e) => {
                       const target = e.currentTarget;
                       if (!target.src.includes('1000568378-removebg-preview.png')) {
