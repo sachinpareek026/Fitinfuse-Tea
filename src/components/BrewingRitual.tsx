@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BREWING_STEPS } from '../data/content';
 import { Play, RotateCcw, Sparkles, CheckCircle2 } from 'lucide-react';
+import { OptimizedImage } from './OptimizedImage';
 
 export const BrewingRitual: React.FC = () => {
   const [timerActive, setTimerActive] = useState(false);
@@ -66,16 +67,12 @@ export const BrewingRitual: React.FC = () => {
                   </span>
                 </div>
 
-                <div className="h-56 sm:h-64 rounded-2xl overflow-hidden mb-6 relative">
-                  <img
+                <div className="h-56 sm:h-64 rounded-2xl overflow-hidden mb-6 relative bg-[#123524]/5">
+                  <OptimizedImage
                     src={step.iconImage}
+                    fallbackSrc={step.fallbackImage}
                     alt={step.title}
-                    referrerPolicy="no-referrer"
-                    onError={(e) => {
-                      if (step.fallbackImage && e.currentTarget.src !== step.fallbackImage) {
-                        e.currentTarget.src = step.fallbackImage;
-                      }
-                    }}
+                    containerClassName="w-full h-full"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>

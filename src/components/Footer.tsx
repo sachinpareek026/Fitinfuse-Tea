@@ -18,6 +18,8 @@ export const Footer: React.FC = () => {
                 src="/brand-logo.png?v=20260828"
                 alt="FitInFuse Emblem & Identity"
                 referrerPolicy="no-referrer"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-auto max-h-40 sm:max-h-48 object-contain pr-[200px] transition-transform duration-300 hover:scale-105"
               />
             </div>

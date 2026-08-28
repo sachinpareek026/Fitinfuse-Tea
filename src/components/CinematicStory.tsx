@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CINEMATIC_STORY } from '../data/content';
 import { Play, Pause, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
+import { OptimizedImage } from './OptimizedImage';
 
 export const CinematicStory: React.FC = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -106,14 +107,15 @@ export const CinematicStory: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center bg-[#123524]/60 rounded-3xl p-6 sm:p-10 border border-[#1E4A32] shadow-2xl backdrop-blur-md">
           
           {/* Main Visual Imagery Container */}
-          <div className="lg:col-span-7 h-[360px] sm:h-[460px] rounded-2xl overflow-hidden relative shadow-inner">
-            <img
+          <div className="lg:col-span-7 h-[360px] sm:h-[460px] rounded-2xl overflow-hidden relative shadow-inner bg-[#0B1A12]">
+            <OptimizedImage
               src={current.image}
               alt={current.title}
               key={current.id}
-              className="w-full h-full object-cover transition-opacity duration-700 animate-in fade-in"
+              containerClassName="w-full h-full"
+              className="w-full h-full object-cover transition-opacity duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0B1A12]/80 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0B1A12]/80 via-transparent to-transparent pointer-events-none" />
             
             <div className="absolute bottom-6 left-6 right-6">
               <span className="inline-block px-3 py-1 bg-[#123524]/80 backdrop-blur-md rounded-full text-[10px] font-sans uppercase tracking-[0.25em] text-[#C7A35A] mb-2 border border-[#C7A35A]/30">

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BOTANICALS } from '../data/content';
 import { Botanical } from '../types';
 import { Sparkles, Info, X } from 'lucide-react';
+import { OptimizedImage } from './OptimizedImage';
 
 export const BotanicalBlend: React.FC = () => {
   const [selectedBotanical, setSelectedBotanical] = useState<Botanical | null>(null);
@@ -36,18 +37,14 @@ export const BotanicalBlend: React.FC = () => {
             >
               {/* Image Container with Rounded Corners */}
               <div className="relative w-full h-64 sm:h-72 rounded-2xl overflow-hidden bg-[#123524]/5">
-                <img
+                <OptimizedImage
                   src={botanical.image}
+                  fallbackSrc={botanical.fallbackImage}
                   alt={botanical.name}
-                  referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    if (botanical.fallbackImage && (e.currentTarget.src !== botanical.fallbackImage)) {
-                      e.currentTarget.src = botanical.fallbackImage;
-                    }
-                  }}
+                  containerClassName="w-full h-full"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity pointer-events-none" />
                 
                 {/* Index tag */}
                 <div className="absolute top-4 left-4 bg-[#FAF9F5]/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-sans font-semibold text-[#123524] tracking-widest uppercase">
@@ -126,18 +123,15 @@ export const BotanicalBlend: React.FC = () => {
             </button>
 
             <div className="h-64 w-full relative">
-              <img
+              <OptimizedImage
                 src={selectedBotanical.image}
+                fallbackSrc={selectedBotanical.fallbackImage}
                 alt={selectedBotanical.name}
-                referrerPolicy="no-referrer"
-                onError={(e) => {
-                  if (selectedBotanical.fallbackImage && (e.currentTarget.src !== selectedBotanical.fallbackImage)) {
-                    e.currentTarget.src = selectedBotanical.fallbackImage;
-                  }
-                }}
+                priority={true}
+                containerClassName="w-full h-full"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#FAF9F5] via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#FAF9F5] via-transparent to-transparent pointer-events-none" />
             </div>
 
             <div className="p-8 -mt-8 relative z-10 space-y-4">

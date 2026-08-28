@@ -1,6 +1,6 @@
 {
-  "name": "FitInFuse",
-  "description": "Leaf of Fitness — Premium Herbal Wellness Infusion with 9 botanicals for quiet calm and mindful slowing down.",
+  "name": "FitInfuse | Your Daily Fitness & Wellness Tea",
+  "description": "Your daily fitness & wellness tea, crafted with 9 carefully selected botanicals for your overall well-being. Sip wellness. Stay fit. Let’s FitInfuse.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import { OptimizedImage } from './OptimizedImage';
 
 export const VisualCardStrip: React.FC = () => {
   return (
@@ -20,14 +21,15 @@ export const VisualCardStrip: React.FC = () => {
         <div className="flex gap-6 overflow-x-auto pb-6 pt-2 hide-scrollbar snap-x snap-mandatory">
           
           {/* CARD 1: Large Botanical Harvest Photograph */}
-          <div className="min-w-[280px] sm:min-w-[340px] md:w-[28%] flex-shrink-0 h-[440px] sm:h-[480px] rounded-3xl overflow-hidden relative shadow-lg group snap-start">
-            <img
+          <div className="min-w-[280px] sm:min-w-[340px] md:w-[28%] flex-shrink-0 h-[440px] sm:h-[480px] rounded-3xl overflow-hidden relative shadow-lg group snap-start bg-[#123524]/5">
+            <OptimizedImage
               src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=1000&q=80"
               alt="Botanical Chamomile & Herbs"
+              containerClassName="w-full h-full"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6 text-white">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute bottom-6 left-6 right-6 text-white pointer-events-none">
               <span className="text-[10px] font-sans uppercase tracking-[0.25em] font-medium text-[#E6D38B] block mb-1">
                 PURE HARVEST
               </span>
@@ -66,14 +68,15 @@ export const VisualCardStrip: React.FC = () => {
           </div>
 
           {/* CARD 3: Botanical / Tea Infusion Photograph */}
-          <div className="min-w-[280px] sm:min-w-[340px] md:w-[28%] flex-shrink-0 h-[440px] sm:h-[480px] rounded-3xl overflow-hidden relative shadow-lg group snap-start">
-            <img
+          <div className="min-w-[280px] sm:min-w-[340px] md:w-[28%] flex-shrink-0 h-[440px] sm:h-[480px] rounded-3xl overflow-hidden relative shadow-lg group snap-start bg-[#123524]/5">
+            <OptimizedImage
               src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1000&q=80"
               alt="Warm amber herbal tea infusion"
+              containerClassName="w-full h-full"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6 text-white">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute bottom-6 left-6 right-6 text-white pointer-events-none">
               <span className="text-[10px] font-sans uppercase tracking-[0.25em] font-medium text-[#E6D38B] block mb-1">
                 WARMTH & CLARITY
               </span>

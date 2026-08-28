@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Flower2, Sparkles } from 'lucide-react';
+import { OptimizedImage } from './OptimizedImage';
 
 export const LargeImageStory: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -13,8 +14,9 @@ export const LargeImageStory: React.FC = () => {
   const videoSrc = 'https://res.cloudinary.com/x1dci3fh/video/upload/q_auto,f_auto/Botanicals_falling_into_tea_cup_202608272158.mp4';
   const videoFallbackSrc = 'https://res.cloudinary.com/x1dci3fh/video/upload/Botanicals_falling_into_tea_cup_202608272158.mp4';
 
-  // Preview Poster Image URL with cache-busting
-  const previewPosterImg = '/video-preview-poster.png?v=20260828';
+  // Preview Poster Image URL with cache-busting & fast WebP
+  const previewPosterImg = '/video-preview-poster.webp';
+  const previewPosterFallback = '/video-preview-poster.png?v=20260828';
 
   // 1. IntersectionObserver: Autoplay once when section enters viewport
   useEffect(() => {
@@ -135,13 +137,11 @@ export const LargeImageStory: React.FC = () => {
                 isPlaying ? 'opacity-0' : 'opacity-100'
               }`}
             >
-              <img
+              <OptimizedImage
                 src={previewPosterImg}
+                fallbackSrc={previewPosterFallback}
                 alt="FitInFuse Video Preview Poster"
-                referrerPolicy="no-referrer"
-                onError={(e) => {
-                  e.currentTarget.src = "https://lh3.googleusercontent.com/d/1w2NwY06VDHzhnGAJz7SCV84GLwloZBfC";
-                }}
+                containerClassName="w-full h-full"
                 className="w-full h-full object-cover filter brightness-90 transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-[#071C13]/30 backdrop-blur-[1px]" />
@@ -182,18 +182,16 @@ export const LargeImageStory: React.FC = () => {
           <div className="lg:col-span-4 space-y-6">
             
             {/* Top Supporting Card */}
-            <div className="h-60 sm:h-64 rounded-3xl overflow-hidden relative shadow-md group border border-[#123524]/10">
-              <img
-                src="/botanical-editorial-card.png?v=20260828"
+            <div className="h-60 sm:h-64 rounded-3xl overflow-hidden relative shadow-md group border border-[#123524]/10 bg-[#123524]/5">
+              <OptimizedImage
+                src="/botanical-editorial-card.webp"
+                fallbackSrc="/botanical-editorial-card.png?v=20260828"
                 alt="For everyone and a stress-free lifestyle - FitInFuse"
-                referrerPolicy="no-referrer"
-                onError={(e) => {
-                  e.currentTarget.src = "https://lh3.googleusercontent.com/d/1-GQQn54TKdqnayLJjJfdKZ4zhGnmXs_d";
-                }}
+                containerClassName="w-full h-full"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4 text-white">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+              <div className="absolute bottom-4 left-4 right-4 text-white pointer-events-none">
                 <span className="text-[10px] uppercase font-sans tracking-widest text-[#E6D38B] font-medium block">
                   FOR EVERYONE
                 </span>
