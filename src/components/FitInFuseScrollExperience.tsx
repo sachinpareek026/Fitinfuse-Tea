@@ -140,25 +140,25 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
   const step2In = getStepProgress(0.13, 0.19);
   const step2Out = scrollProgress > 0.27 ? Math.max(0, 1 - (scrollProgress - 0.27) / 0.05) : 1;
   const step2Opacity = step2In * step2Out;
-  const step2X = (1 - step2In) * -35;
+  const step2Y = (1 - step2In) * 20;
 
   // Step 3 (9 Botanicals): 0.29 -> 0.43
   const step3In = getStepProgress(0.28, 0.34);
   const step3Out = scrollProgress > 0.42 ? Math.max(0, 1 - (scrollProgress - 0.42) / 0.05) : 1;
   const step3Opacity = step3In * step3Out;
-  const step3X = (1 - step3In) * 35;
+  const step3Y = (1 - step3In) * 20;
 
   // Step 4 (No Caffeine): 0.44 -> 0.58
   const step4In = getStepProgress(0.43, 0.49);
   const step4Out = scrollProgress > 0.57 ? Math.max(0, 1 - (scrollProgress - 0.57) / 0.05) : 1;
   const step4Opacity = step4In * step4Out;
-  const step4X = (1 - step4In) * -35;
+  const step4Y = (1 - step4In) * 20;
 
   // Step 5 (For Every Moment): 0.59 -> 0.73
   const step5In = getStepProgress(0.58, 0.64);
   const step5Out = scrollProgress > 0.72 ? Math.max(0, 1 - (scrollProgress - 0.72) / 0.05) : 1;
   const step5Opacity = step5In * step5Out;
-  const step5X = (1 - step5In) * 35;
+  const step5Y = (1 - step5In) * 20;
 
   // Step 6 (For Everyone): 0.74 -> 0.88
   const step6In = getStepProgress(0.73, 0.79);
@@ -288,8 +288,8 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
               }}
             >
               {/* Left Flank: Main Title, Brand & Purity Badges */}
-              <div className="absolute left-4 sm:left-10 md:left-14 lg:left-20 xl:left-24 bottom-12 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 max-w-[calc(100vw-2rem)] sm:max-w-xs md:max-w-sm lg:max-w-md text-center sm:text-left z-30 pointer-events-auto flex flex-col items-center sm:items-start">
-                <div className="space-y-3 bg-[#071C13]/85 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/30 shadow-2xl sm:shadow-none w-full sm:w-auto -translate-y-2 sm:translate-y-0">
+              <div className="absolute left-4 right-4 sm:right-auto sm:left-10 md:left-14 lg:left-20 xl:left-24 bottom-8 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 max-w-sm sm:max-w-xs md:max-w-sm lg:max-w-md mx-auto sm:mx-0 text-center sm:text-left z-30 pointer-events-auto flex flex-col items-center sm:items-start">
+                <div className="space-y-3 bg-[#071C13]/85 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/30 shadow-2xl sm:shadow-none w-full sm:w-auto">
                   <div className="space-y-1">
                     <span className="text-[11px] sm:text-xs font-tin-spec font-medium text-[#E5C989] uppercase block drop-shadow-sm">
                       {BRAND_INFO.name}
@@ -338,179 +338,199 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
             </div>
 
             {/* ---------------------------------------------------- */}
-            {/* STEP 2: PEPPERMINT FLAVOUR (Left Side Vertically Centered) */}
+            {/* STEP 2: PEPPERMINT FLAVOUR (Left Flank) */}
             {/* ---------------------------------------------------- */}
             <div
               id="step-2-peppermint-reveal"
-              className="absolute left-4 sm:left-8 md:left-12 lg:left-16 xl:left-24 bottom-10 sm:bottom-auto sm:top-1/2 max-w-[calc(100vw-2rem)] sm:max-w-xs md:max-w-sm lg:max-w-md pointer-events-auto transition-all duration-200"
+              className="absolute inset-0 pointer-events-none transition-all duration-300"
               style={{
                 opacity: step2Opacity,
-                transform: `translate(${step2X}px, 0) sm:translate(${step2X}px, -50%)`,
+                transform: `translateY(${step2Y}px)`,
                 visibility: step2Opacity > 0.01 ? 'visible' : 'hidden',
               }}
             >
-              <div className="space-y-3 sm:space-y-4 bg-[#071C13]/85 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/25 shadow-xl sm:shadow-none">
-                {/* Gold Circle Badge with Leaf */}
-                <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-[#C7A35A] p-0.5 sm:p-1 flex items-center justify-center bg-[#071C13] shadow-[0_0_20px_rgba(199,163,90,0.2)]">
-                  <div className="w-full h-full rounded-full border border-[#C7A35A]/40 flex items-center justify-center bg-[#0D2F20]">
-                    <Leaf className="w-4 h-4 sm:w-6 sm:h-6 text-[#C7A35A]" />
+              <div className="absolute left-4 right-4 sm:right-auto sm:left-10 md:left-14 lg:left-20 xl:left-24 bottom-8 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 max-w-sm sm:max-w-xs md:max-w-sm lg:max-w-md mx-auto sm:mx-0 text-center sm:text-left z-30 pointer-events-auto flex flex-col items-center sm:items-start">
+                <div className="space-y-3 bg-[#071C13]/85 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/30 shadow-2xl sm:shadow-none w-full sm:w-auto text-center sm:text-left flex flex-col items-center sm:items-start">
+                  {/* Gold Circle Badge with Leaf */}
+                  <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-[#C7A35A] p-0.5 sm:p-1 flex items-center justify-center bg-[#071C13] shadow-[0_0_20px_rgba(199,163,90,0.2)]">
+                    <div className="w-full h-full rounded-full border border-[#C7A35A]/40 flex items-center justify-center bg-[#0D2F20]">
+                      <Leaf className="w-4 h-4 sm:w-6 sm:h-6 text-[#C7A35A]" />
+                    </div>
                   </div>
-                </div>
 
-                {/* Heading */}
-                <div className="space-y-0.5">
-                  <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal text-[#F4F0E5] tracking-tight leading-tight">
-                    Peppermint <br />
-                    <span className="italic text-[#C7A35A]">Flavour</span>
-                  </h2>
-                </div>
+                  {/* Heading */}
+                  <div className="space-y-0.5">
+                    <span className="text-[11px] sm:text-xs font-tin-spec font-medium text-[#E5C989] uppercase block drop-shadow-sm">
+                      01 / Flavour Profile
+                    </span>
+                    <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal text-[#F4F0E5] tracking-tight leading-tight">
+                      Peppermint <br />
+                      <span className="italic text-[#C7A35A]">Flavour</span>
+                    </h2>
+                  </div>
 
-                {/* Decorative Gold Leaf Flourish Divider */}
-                <div className="flex items-center gap-2 py-0.5">
-                  <span className="h-px w-6 sm:w-8 bg-[#C7A35A]/60" />
-                  <span className="text-[#C7A35A] text-xs">❦</span>
-                  <span className="h-px w-6 sm:w-8 bg-[#C7A35A]/60" />
-                </div>
+                  {/* Decorative Gold Leaf Flourish Divider */}
+                  <div className="flex items-center justify-center sm:justify-start gap-2 py-0.5">
+                    <span className="h-px w-6 sm:w-8 bg-[#C7A35A]/60" />
+                    <span className="text-[#C7A35A] text-xs">❦</span>
+                    <span className="h-px w-6 sm:w-8 bg-[#C7A35A]/60" />
+                  </div>
 
-                {/* Supporting Copy */}
-                <p className="text-xs sm:text-sm md:text-base font-sans text-[#F4F0E5]/85 leading-relaxed font-light">
-                  A fresh, cooling peppermint-forward herbal infusion that gently awakens clarity and refreshes your senses with every sip.
-                </p>
+                  {/* Supporting Copy */}
+                  <p className="text-xs sm:text-sm md:text-base font-sans text-[#F4F0E5]/85 leading-relaxed font-light">
+                    A fresh, cooling peppermint-forward herbal infusion that gently awakens clarity and refreshes your senses with every sip.
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* ---------------------------------------------------- */}
-            {/* STEP 3: NINE BOTANICALS (Right Side Vertically Centered) */}
+            {/* STEP 3: NINE BOTANICALS (Right Flank) */}
             {/* ---------------------------------------------------- */}
             <div
               id="step-3-botanicals-reveal"
-              className="absolute right-4 sm:right-8 md:right-12 lg:right-16 xl:right-24 bottom-10 sm:bottom-auto sm:top-1/2 max-w-[calc(100vw-2rem)] sm:max-w-xs md:max-w-sm lg:max-w-md pointer-events-auto transition-all duration-200"
+              className="absolute inset-0 pointer-events-none transition-all duration-300"
               style={{
                 opacity: step3Opacity,
-                transform: `translate(${step3X}px, 0) sm:translate(${step3X}px, -50%)`,
+                transform: `translateY(${step3Y}px)`,
                 visibility: step3Opacity > 0.01 ? 'visible' : 'hidden',
               }}
             >
-              <div className="space-y-3 sm:space-y-4 text-left sm:text-right flex flex-col sm:items-end bg-[#071C13]/85 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/25 shadow-xl sm:shadow-none">
-                {/* Gold Circle Badge with Blossom */}
-                <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-[#C7A35A] p-0.5 sm:p-1 flex items-center justify-center bg-[#071C13] shadow-[0_0_20px_rgba(199,163,90,0.2)]">
-                  <div className="w-full h-full rounded-full border border-[#C7A35A]/40 flex items-center justify-center bg-[#0D2F20]">
-                    <Sparkles className="w-4 h-4 sm:w-6 sm:h-6 text-[#C7A35A]" />
+              <div className="absolute left-4 right-4 sm:left-auto sm:right-10 md:right-14 lg:right-20 xl:right-24 bottom-8 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 max-w-sm sm:max-w-xs md:max-w-sm lg:max-w-md mx-auto sm:mx-0 text-center sm:text-right z-30 pointer-events-auto flex flex-col items-center sm:items-end">
+                <div className="space-y-3 bg-[#071C13]/85 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/30 shadow-2xl sm:shadow-none w-full sm:w-auto text-center sm:text-right flex flex-col items-center sm:items-end">
+                  {/* Gold Circle Badge with Blossom */}
+                  <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-[#C7A35A] p-0.5 sm:p-1 flex items-center justify-center bg-[#071C13] shadow-[0_0_20px_rgba(199,163,90,0.2)]">
+                    <div className="w-full h-full rounded-full border border-[#C7A35A]/40 flex items-center justify-center bg-[#0D2F20]">
+                      <Sparkles className="w-4 h-4 sm:w-6 sm:h-6 text-[#C7A35A]" />
+                    </div>
                   </div>
-                </div>
 
-                {/* Heading */}
-                <div className="space-y-0.5">
-                  <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal text-[#F4F0E5] tracking-tight leading-tight">
-                    Nine Botanicals, <br />
-                    <span className="italic text-[#C7A35A]">One Beautiful Blend</span>
-                  </h2>
-                </div>
+                  {/* Heading */}
+                  <div className="space-y-0.5">
+                    <span className="text-[11px] sm:text-xs font-tin-spec font-medium text-[#E5C989] uppercase block drop-shadow-sm">
+                      02 / Formulation
+                    </span>
+                    <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal text-[#F4F0E5] tracking-tight leading-tight">
+                      Nine Botanicals, <br />
+                      <span className="italic text-[#C7A35A]">One Beautiful Blend</span>
+                    </h2>
+                  </div>
 
-                {/* Decorative Gold Leaf Flourish Divider */}
-                <div className="flex items-center gap-2 py-0.5">
-                  <span className="h-px w-6 sm:w-8 bg-[#C7A35A]/60" />
-                  <span className="text-[#C7A35A] text-xs">❦</span>
-                  <span className="h-px w-6 sm:w-8 bg-[#C7A35A]/60" />
-                </div>
+                  {/* Decorative Gold Leaf Flourish Divider */}
+                  <div className="flex items-center justify-center sm:justify-end gap-2 py-0.5">
+                    <span className="h-px w-6 sm:w-8 bg-[#C7A35A]/60" />
+                    <span className="text-[#C7A35A] text-xs">❦</span>
+                    <span className="h-px w-6 sm:w-8 bg-[#C7A35A]/60" />
+                  </div>
 
-                {/* Supporting Copy */}
-                <div className="space-y-2">
-                  <p className="text-xs sm:text-sm md:text-base font-sans text-[#F4F0E5]/90 font-light leading-relaxed">
-                    Thoughtfully crafted with nine natural botanicals:
-                  </p>
-                  <p className="text-[11px] sm:text-xs md:text-sm font-sans text-[#C7A35A] tracking-wide font-normal leading-relaxed">
-                    Chamomile · Lavender · Hibiscus · Rose · Licorice <br className="hidden sm:block" />
-                    Rooibos · Lemongrass · Ashwagandha · Peppermint
-                  </p>
+                  {/* Supporting Copy */}
+                  <div className="space-y-2">
+                    <p className="text-xs sm:text-sm md:text-base font-sans text-[#F4F0E5]/90 font-light leading-relaxed">
+                      Thoughtfully crafted with nine natural botanicals:
+                    </p>
+                    <p className="text-[11px] sm:text-xs md:text-sm font-sans text-[#C7A35A] tracking-wide font-normal leading-relaxed">
+                      Chamomile · Lavender · Hibiscus · Rose · Licorice <br className="hidden sm:block" />
+                      Rooibos · Lemongrass · Ashwagandha · Peppermint
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* ---------------------------------------------------- */}
-            {/* STEP 4: NO CAFFEINE (Left Side Vertically Centered) */}
+            {/* STEP 4: NO CAFFEINE (Left Flank) */}
             {/* ---------------------------------------------------- */}
             <div
               id="step-4-no-caffeine-reveal"
-              className="absolute left-4 sm:left-8 md:left-12 lg:left-16 xl:left-24 bottom-10 sm:bottom-auto sm:top-1/2 max-w-[calc(100vw-2rem)] sm:max-w-xs md:max-w-sm lg:max-w-md pointer-events-auto transition-all duration-200"
+              className="absolute inset-0 pointer-events-none transition-all duration-300"
               style={{
                 opacity: step4Opacity,
-                transform: `translate(${step4X}px, 0) sm:translate(${step4X}px, -50%)`,
+                transform: `translateY(${step4Y}px)`,
                 visibility: step4Opacity > 0.01 ? 'visible' : 'hidden',
               }}
             >
-              <div className="space-y-3 sm:space-y-4 bg-[#071C13]/85 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/25 shadow-xl sm:shadow-none">
-                {/* Gold Circle Badge with Steaming Cup */}
-                <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-[#C7A35A] p-0.5 sm:p-1 flex items-center justify-center bg-[#071C13] shadow-[0_0_20px_rgba(199,163,90,0.2)]">
-                  <div className="w-full h-full rounded-full border border-[#C7A35A]/40 flex items-center justify-center bg-[#0D2F20]">
-                    <Coffee className="w-4 h-4 sm:w-6 sm:h-6 text-[#C7A35A]" />
+              <div className="absolute left-4 right-4 sm:right-auto sm:left-10 md:left-14 lg:left-20 xl:left-24 bottom-8 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 max-w-sm sm:max-w-xs md:max-w-sm lg:max-w-md mx-auto sm:mx-0 text-center sm:text-left z-30 pointer-events-auto flex flex-col items-center sm:items-start">
+                <div className="space-y-3 bg-[#071C13]/85 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/30 shadow-2xl sm:shadow-none w-full sm:w-auto text-center sm:text-left flex flex-col items-center sm:items-start">
+                  {/* Gold Circle Badge with Steaming Cup */}
+                  <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-[#C7A35A] p-0.5 sm:p-1 flex items-center justify-center bg-[#071C13] shadow-[0_0_20px_rgba(199,163,90,0.2)]">
+                    <div className="w-full h-full rounded-full border border-[#C7A35A]/40 flex items-center justify-center bg-[#0D2F20]">
+                      <Coffee className="w-4 h-4 sm:w-6 sm:h-6 text-[#C7A35A]" />
+                    </div>
                   </div>
-                </div>
 
-                {/* Heading */}
-                <div className="space-y-0.5">
-                  <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal text-[#F4F0E5] tracking-tight leading-tight">
-                    No Caffeine
-                  </h2>
-                </div>
+                  {/* Heading */}
+                  <div className="space-y-0.5">
+                    <span className="text-[11px] sm:text-xs font-tin-spec font-medium text-[#E5C989] uppercase block drop-shadow-sm">
+                      03 / Purity
+                    </span>
+                    <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal text-[#F4F0E5] tracking-tight leading-tight">
+                      No Caffeine
+                    </h2>
+                  </div>
 
-                {/* Decorative Gold Leaf Flourish Divider */}
-                <div className="flex items-center gap-2 py-0.5">
-                  <span className="h-px w-6 sm:w-8 bg-[#C7A35A]/60" />
-                  <span className="text-[#C7A35A] text-xs">❦</span>
-                  <span className="h-px w-6 sm:w-8 bg-[#C7A35A]/60" />
-                </div>
+                  {/* Decorative Gold Leaf Flourish Divider */}
+                  <div className="flex items-center justify-center sm:justify-start gap-2 py-0.5">
+                    <span className="h-px w-6 sm:w-8 bg-[#C7A35A]/60" />
+                    <span className="text-[#C7A35A] text-xs">❦</span>
+                    <span className="h-px w-6 sm:w-8 bg-[#C7A35A]/60" />
+                  </div>
 
-                {/* Supporting Copy */}
-                <p className="text-xs sm:text-sm md:text-base font-sans text-[#F4F0E5]/85 leading-relaxed font-light">
-                  A calming herbal infusion you can enjoy anytime, naturally caffeine-free for your everyday moments — morning, afternoon, or evening.
-                </p>
+                  {/* Supporting Copy */}
+                  <p className="text-xs sm:text-sm md:text-base font-sans text-[#F4F0E5]/85 leading-relaxed font-light">
+                    A calming herbal infusion you can enjoy anytime, naturally caffeine-free for your everyday moments — morning, afternoon, or evening.
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* ---------------------------------------------------- */}
-            {/* STEP 5: FOR EVERY MOMENT (Right Side Vertically Centered) */}
+            {/* STEP 5: FOR EVERY MOMENT (Right Flank) */}
             {/* ---------------------------------------------------- */}
             <div
               id="step-5-every-moment-reveal"
-              className="absolute right-4 sm:right-8 md:right-12 lg:right-16 xl:right-24 bottom-10 sm:bottom-auto sm:top-1/2 max-w-[calc(100vw-2rem)] sm:max-w-xs md:max-w-sm lg:max-w-md pointer-events-auto transition-all duration-200"
+              className="absolute inset-0 pointer-events-none transition-all duration-300"
               style={{
                 opacity: step5Opacity,
-                transform: `translate(${step5X}px, 0) sm:translate(${step5X}px, -50%)`,
+                transform: `translateY(${step5Y}px)`,
                 visibility: step5Opacity > 0.01 ? 'visible' : 'hidden',
               }}
             >
-              <div className="space-y-3 sm:space-y-4 text-left sm:text-right flex flex-col sm:items-end bg-[#071C13]/85 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/25 shadow-xl sm:shadow-none">
-                {/* Gold Circle Badge with Mindful Calm Icon */}
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-[#C7A35A] p-0.5 sm:p-1 flex items-center justify-center bg-[#071C13] shadow-[0_0_20px_rgba(199,163,90,0.2)]">
-                  <div className="w-full h-full rounded-full border border-[#C7A35A]/40 flex items-center justify-center bg-[#0D2F20]">
-                    <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-[#C7A35A]" />
+              <div className="absolute left-4 right-4 sm:left-auto sm:right-10 md:right-14 lg:right-20 xl:right-24 bottom-8 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 max-w-sm sm:max-w-xs md:max-w-sm lg:max-w-md mx-auto sm:mx-0 text-center sm:text-right z-30 pointer-events-auto flex flex-col items-center sm:items-end">
+                <div className="space-y-3 bg-[#071C13]/85 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/30 shadow-2xl sm:shadow-none w-full sm:w-auto text-center sm:text-right flex flex-col items-center sm:items-end">
+                  {/* Gold Circle Badge with Mindful Calm Icon */}
+                  <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-[#C7A35A] p-0.5 sm:p-1 flex items-center justify-center bg-[#071C13] shadow-[0_0_20px_rgba(199,163,90,0.2)]">
+                    <div className="w-full h-full rounded-full border border-[#C7A35A]/40 flex items-center justify-center bg-[#0D2F20]">
+                      <Heart className="w-4 h-4 sm:w-6 sm:h-6 text-[#C7A35A]" />
+                    </div>
                   </div>
-                </div>
 
-                {/* Heading */}
-                <div className="space-y-0.5">
-                  <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal text-[#F4F0E5] tracking-tight leading-tight">
-                    For Every Moment <br />
-                    <span className="italic text-[#C7A35A]">You Need Relief</span>
-                  </h2>
-                </div>
+                  {/* Heading */}
+                  <div className="space-y-0.5">
+                    <span className="text-[11px] sm:text-xs font-tin-spec font-medium text-[#E5C989] uppercase block drop-shadow-sm">
+                      04 / Mindful Pause
+                    </span>
+                    <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal text-[#F4F0E5] tracking-tight leading-tight">
+                      For Every Moment <br />
+                      <span className="italic text-[#C7A35A]">You Need Relief</span>
+                    </h2>
+                  </div>
 
-                {/* Decorative Gold Leaf Flourish Divider */}
-                <div className="flex items-center gap-2 py-0.5">
-                  <span className="h-px w-6 sm:w-8 bg-[#C7A35A]/60" />
-                  <span className="text-[#C7A35A] text-xs">❦</span>
-                  <span className="h-px w-6 sm:w-8 bg-[#C7A35A]/60" />
-                </div>
+                  {/* Decorative Gold Leaf Flourish Divider */}
+                  <div className="flex items-center justify-center sm:justify-end gap-2 py-0.5">
+                    <span className="h-px w-6 sm:w-8 bg-[#C7A35A]/60" />
+                    <span className="text-[#C7A35A] text-xs">❦</span>
+                    <span className="h-px w-6 sm:w-8 bg-[#C7A35A]/60" />
+                  </div>
 
-                {/* Supporting Copy */}
-                <div className="space-y-2 font-sans text-xs sm:text-sm md:text-base font-light text-[#F4F0E5]/85 leading-relaxed">
-                  <p>
-                    Made for your study stress, office deadlines, a long day, or a quiet evening at home.
-                  </p>
-                  <p className="text-[#C7A35A] font-normal italic font-serif text-sm sm:text-base md:text-lg">
-                    A simple moment to pause, breathe and reset.
-                  </p>
+                  {/* Supporting Copy */}
+                  <div className="space-y-2 font-sans text-xs sm:text-sm md:text-base font-light text-[#F4F0E5]/85 leading-relaxed">
+                    <p>
+                      Made for your study stress, office deadlines, a long day, or a quiet evening at home.
+                    </p>
+                    <p className="text-[#C7A35A] font-normal italic font-serif text-sm sm:text-base md:text-lg">
+                      A simple moment to pause, breathe and reset.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -557,10 +577,10 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
               }}
             >
               {/* Left Flank: Same FITINFUSE Brand Identity as Step 1 */}
-              <div className="absolute left-4 sm:left-10 md:left-14 lg:left-20 xl:left-24 bottom-10 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 max-w-[calc(100vw-2rem)] sm:max-w-xs md:max-w-sm text-left z-30 pointer-events-auto">
-                <div className="space-y-3 bg-[#071C13]/85 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/25 shadow-xl sm:shadow-none">
+              <div className="absolute left-4 right-4 sm:right-auto sm:left-10 md:left-14 lg:left-20 xl:left-24 bottom-24 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 max-w-sm sm:max-w-xs md:max-w-sm lg:max-w-md mx-auto sm:mx-0 text-center sm:text-left z-30 pointer-events-auto flex flex-col items-center sm:items-start">
+                <div className="space-y-3 bg-[#071C13]/85 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/30 shadow-2xl sm:shadow-none w-full sm:w-auto flex flex-col items-center sm:items-start">
                   <div className="space-y-1">
-                    <span className="text-[11px] sm:text-xs font-tin-spec font-medium text-[#E5C989] uppercase block">
+                    <span className="text-[11px] sm:text-xs font-tin-spec font-medium text-[#E5C989] uppercase block drop-shadow-sm">
                       {BRAND_INFO.name}
                     </span>
                     <h2 className="font-tin-title text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[#F4F0E5] tracking-tight leading-[1.08]">
@@ -568,7 +588,7 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
                       <span className="font-tin-italic text-[#E5C989]">INFUSION</span>
                     </h2>
                   </div>
-                  <div className="flex items-center gap-2 py-0.5">
+                  <div className="flex items-center justify-center sm:justify-start gap-2 py-0.5">
                     <span className="h-px w-8 bg-[#C7A35A]/60" />
                     <span className="text-[#C7A35A] text-xs">❦</span>
                     <span className="h-px w-8 bg-[#C7A35A]/60" />
@@ -580,14 +600,14 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
               </div>
 
               {/* Right Flank: Clean Centered CTA (Bottom on Mobile, Centered Flank on Desktop) */}
-              <div className="absolute left-4 right-4 sm:left-auto sm:right-10 md:right-14 lg:right-20 xl:right-24 bottom-6 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 max-w-[calc(100vw-2rem)] sm:max-w-xs md:max-w-sm text-center sm:text-right z-30 pointer-events-auto flex flex-col items-center sm:items-end">
-                <div className="space-y-4 bg-[#071C13]/70 sm:bg-transparent backdrop-blur-sm sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/20 flex flex-col items-center sm:items-end w-full sm:w-auto">
+              <div className="absolute left-4 right-4 sm:left-auto sm:right-10 md:right-14 lg:right-20 xl:right-24 bottom-6 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 max-w-sm sm:max-w-xs md:max-w-sm mx-auto sm:mx-0 text-center sm:text-right z-30 pointer-events-auto flex flex-col items-center sm:items-end">
+                <div className="space-y-4 bg-[#071C13]/85 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none p-4 sm:p-0 rounded-2xl border sm:border-0 border-[#C7A35A]/30 flex flex-col items-center sm:items-end w-full sm:w-auto">
                   <button
                     onClick={onOpenExplore}
                     id="final-explore-cta-button"
                     className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-white hover:bg-[#F4F0E5] text-[#071C13] rounded-full font-tin-spec text-xs sm:text-sm font-semibold uppercase transition-all duration-300 shadow-[0_10px_30px_rgba(255,255,255,0.25)] hover:shadow-[0_15px_40px_rgba(255,255,255,0.4)] flex items-center justify-center gap-2.5 cursor-pointer transform hover:-translate-y-0.5 focus:outline-none"
                   >
-                    <span>BUY NOW</span>
+                    <span>EXPLORE THE INFUSION</span>
                     <ArrowRight className="w-4 h-4 text-[#071C13]" />
                   </button>
                 </div>
