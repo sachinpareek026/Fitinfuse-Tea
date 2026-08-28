@@ -14,14 +14,19 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-5 space-y-6">
             {/* Full-Size Transparent Prominent Logo Showcase - Left-Aligned & Sized Up */}
             <div className="w-full max-w-[320px] sm:max-w-[380px] md:max-w-[420px] flex items-center justify-start -ml-1 sm:-ml-2">
-              <img
-                src="/brand-logo.png?v=20260828"
-                alt="FitInFuse Emblem & Identity"
-                referrerPolicy="no-referrer"
-                loading="lazy"
-                decoding="async"
-                className="w-auto h-24 sm:h-28 md:h-32 object-contain object-left transition-transform duration-300 hover:scale-105"
-              />
+              <picture>
+                <source srcSet="/brand-logo.webp" type="image/webp" />
+                <img
+                  src="/brand-logo.png"
+                  alt="FitInFuse Emblem & Identity"
+                  referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
+                  width={420}
+                  height={128}
+                  className="w-auto h-24 sm:h-28 md:h-32 object-contain object-left transition-transform duration-300 hover:scale-105"
+                />
+              </picture>
             </div>
 
             <p className="text-xs text-[#687168] font-sans max-w-sm leading-relaxed">
