@@ -11,7 +11,7 @@ export const EditorialStory: React.FC = () => {
           <span>HERBAL INFUSION RITUAL</span>
           <span className="flex items-center gap-1.5 text-[#123524]">
             <MapPin className="w-3.5 h-3.5 text-[#6F8F62]" />
-            <span>JAIPUR • NOIDA</span>
+            <span>JAIPUR</span>
           </span>
         </div>
 
