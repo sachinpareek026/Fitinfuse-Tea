@@ -277,14 +277,14 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
               >
                 <img
                   id="fitinfuse-hero-canister"
-                  src="/product-canister.png"
+                  src="/product-canister.png?v=20260828"
                   alt="FitInFuse Stress Relief Infusion — Peppermint Flavour"
                   referrerPolicy="no-referrer"
                   className="h-full max-h-[calc(100vh-14rem)] sm:max-h-[calc(100vh-6rem)] w-auto max-w-[90vw] object-contain drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)] pointer-events-auto transition-all duration-300 origin-center -translate-y-12 sm:translate-y-0 scale-[0.88] md:scale-100 hover:scale-[0.91] md:hover:scale-[1.03]"
                   onError={(e) => {
                     const target = e.currentTarget;
                     if (!target.src.includes('1000568378-removebg-preview.png')) {
-                      target.src = '/1000568378-removebg-preview.png';
+                      target.src = '/1000568378-removebg-preview.png?v=20260828';
                     }
                   }}
                 />

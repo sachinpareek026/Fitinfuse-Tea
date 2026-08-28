@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
             {/* Full-Size Transparent Prominent Logo Showcase */}
             <div className="w-full max-w-[280px] sm:max-w-[340px] md:max-w-[380px] flex items-center">
               <img
-                src="/brand-logo.png"
+                src="/brand-logo.png?v=20260828"
                 alt="FitInFuse Emblem & Identity"
                 referrerPolicy="no-referrer"
                 className="w-full h-auto max-h-40 sm:max-h-48 object-contain pr-[200px] transition-transform duration-300 hover:scale-105"

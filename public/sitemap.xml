@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://YOUR-DOMAIN.com/</loc>
+    <lastmod>2026-08-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://YOUR-DOMAIN.com/og-image.png</image:loc>
+      <image:title>FitInfuse | Your Daily Fitness &amp; Wellness Tea</image:title>
+      <image:caption>Your daily fitness &amp; wellness tea, crafted with 9 carefully selected botanicals for your overall well-being.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://YOUR-DOMAIN.com/product-canister.png</image:loc>
+      <image:title>FitInfuse Stress Relief Infusion Herbal Tea Tin</image:title>
+      <image:caption>Caffeine-free Peppermint herbal tea with 9 botanicals.</image:caption>
+    </image:image>
+  </url>
+</urlset>

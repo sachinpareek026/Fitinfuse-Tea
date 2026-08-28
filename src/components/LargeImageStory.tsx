@@ -13,8 +13,8 @@ export const LargeImageStory: React.FC = () => {
   const videoSrc = 'https://res.cloudinary.com/x1dci3fh/video/upload/q_auto,f_auto/Botanicals_falling_into_tea_cup_202608272158.mp4';
   const videoFallbackSrc = 'https://res.cloudinary.com/x1dci3fh/video/upload/Botanicals_falling_into_tea_cup_202608272158.mp4';
 
-  // Preview Poster Image URL
-  const previewPosterImg = '/video-preview-poster.png';
+  // Preview Poster Image URL with cache-busting
+  const previewPosterImg = '/video-preview-poster.png?v=20260828';
 
   // 1. IntersectionObserver: Autoplay once when section enters viewport
   useEffect(() => {
@@ -184,7 +184,7 @@ export const LargeImageStory: React.FC = () => {
             {/* Top Supporting Card */}
             <div className="h-60 sm:h-64 rounded-3xl overflow-hidden relative shadow-md group border border-[#123524]/10">
               <img
-                src="/botanical-editorial-card.png"
+                src="/botanical-editorial-card.png?v=20260828"
                 alt="For everyone and a stress-free lifestyle - FitInFuse"
                 referrerPolicy="no-referrer"
                 onError={(e) => {

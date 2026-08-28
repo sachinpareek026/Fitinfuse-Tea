@@ -45,7 +45,7 @@ export const ProductPackaging: React.FC<ProductPackagingProps> = ({
     }
   };
 
-  const imageSrc = customImage || '/product-canister.png';
+  const imageSrc = customImage || '/product-canister.png?v=20260828';
 
   return (
     <div className={`relative flex flex-col items-center justify-center select-none ${className}`}>

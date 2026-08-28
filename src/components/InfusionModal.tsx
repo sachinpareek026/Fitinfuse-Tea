@@ -88,12 +88,12 @@ export const InfusionModal: React.FC<InfusionModalProps> = ({ isOpen, onClose })
               {/* Product Overview Summary */}
               <div className="flex flex-col sm:flex-row gap-6 items-center bg-[#0D2F20]/50 p-5 rounded-2xl border border-[#C7A35A]/20">
                 <img
-                  src="/product-canister.png"
+                  src="/product-canister.png?v=20260828"
                   alt="FitInFuse Canister"
                   referrerPolicy="no-referrer"
                   className="w-24 h-36 object-contain"
                   onError={(e) => {
-                    e.currentTarget.src = '/1000568378-removebg-preview.png';
+                    e.currentTarget.src = '/1000568378-removebg-preview.png?v=20260828';
                   }}
                 />
                 <div className="space-y-2 text-center sm:text-left">
