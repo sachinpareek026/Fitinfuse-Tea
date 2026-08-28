@@ -39,6 +39,12 @@ export const BotanicalBlend: React.FC = () => {
                 <img
                   src={botanical.image}
                   alt={botanical.name}
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    if (botanical.fallbackImage && (e.currentTarget.src !== botanical.fallbackImage)) {
+                      e.currentTarget.src = botanical.fallbackImage;
+                    }
+                  }}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
@@ -108,11 +114,12 @@ export const BotanicalBlend: React.FC = () => {
 
       {/* Botanical Detail Modal */}
       {selectedBotanical && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="bg-[#FAF9F5] rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-[#123524]/20 relative">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 overflow-y-auto bg-black/75 backdrop-blur-md animate-in fade-in duration-200 pt-20 sm:pt-24 pb-8">
+          <div className="fixed inset-0" onClick={() => setSelectedBotanical(null)} />
+          <div className="bg-[#FAF9F5] rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-[#123524]/20 relative z-10 my-auto">
             <button
               onClick={() => setSelectedBotanical(null)}
-              className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/40 text-white flex items-center justify-center hover:bg-black/60 transition-colors"
+              className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/80 transition-colors cursor-pointer shadow-lg"
               aria-label="Close details"
             >
               <X className="w-5 h-5" />
@@ -122,6 +129,12 @@ export const BotanicalBlend: React.FC = () => {
               <img
                 src={selectedBotanical.image}
                 alt={selectedBotanical.name}
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  if (selectedBotanical.fallbackImage && (e.currentTarget.src !== selectedBotanical.fallbackImage)) {
+                    e.currentTarget.src = selectedBotanical.fallbackImage;
+                  }
+                }}
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#FAF9F5] via-transparent to-transparent" />

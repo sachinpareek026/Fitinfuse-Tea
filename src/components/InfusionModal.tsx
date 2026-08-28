@@ -15,7 +15,7 @@ export const InfusionModal: React.FC<InfusionModalProps> = ({ isOpen, onClose })
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto bg-black/80 backdrop-blur-md transition-all duration-300">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 overflow-y-auto bg-black/80 backdrop-blur-md transition-all duration-300 pt-20 sm:pt-24 pb-8">
       {/* Click outside to close */}
       <div className="fixed inset-0" onClick={onClose} />
 
@@ -141,16 +141,33 @@ export const InfusionModal: React.FC<InfusionModalProps> = ({ isOpen, onClose })
               {BOTANICALS.map((item) => (
                 <div
                   key={item.id}
-                  className="bg-white/5 p-3.5 rounded-xl border border-white/10 space-y-1.5 hover:border-[#C7A35A]/50 transition-colors"
+                  className="bg-white/5 p-3.5 rounded-xl border border-white/10 space-y-2 hover:border-[#C7A35A]/50 transition-colors flex flex-col justify-between"
                 >
-                  <div className="flex items-center justify-between">
-                    <span className="font-serif text-lg text-[#F4F0E5]">{item.name}</span>
-                    <span className="w-2 h-2 rounded-full" style={{ backgroundColor: item.accentColor }} />
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 bg-white/10">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        referrerPolicy="no-referrer"
+                        onError={(e) => {
+                          if (item.fallbackImage && e.currentTarget.src !== item.fallbackImage) {
+                            e.currentTarget.src = item.fallbackImage;
+                          }
+                        }}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="min-w-0">
+                      <div className="flex items-center justify-between gap-1">
+                        <span className="font-serif text-base text-[#F4F0E5] truncate">{item.name}</span>
+                        <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: item.accentColor }} />
+                      </div>
+                      <span className="text-[10px] font-sans italic text-[#C7A35A] block truncate">
+                        {item.scientificName}
+                      </span>
+                    </div>
                   </div>
-                  <span className="text-[10px] font-sans italic text-[#C7A35A] block">
-                    {item.scientificName}
-                  </span>
-                  <p className="text-[11px] font-sans text-[#F4F0E5]/70 leading-normal">
+                  <p className="text-[11px] font-sans text-[#F4F0E5]/70 leading-normal line-clamp-2">
                     {item.aromaProfile}
                   </p>
                 </div>

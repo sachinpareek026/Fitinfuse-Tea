@@ -5,6 +5,7 @@ export interface Botanical {
   description: string;
   aromaProfile: string;
   image: string;
+  fallbackImage?: string;
   accentColor: string;
 }
 
@@ -23,6 +24,7 @@ export interface BrewingStep {
   instruction: string;
   detail: string;
   iconImage: string;
+  fallbackImage?: string;
 }
 
 export interface FaqItem {

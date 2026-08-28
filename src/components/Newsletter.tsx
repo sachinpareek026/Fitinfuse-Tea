@@ -15,7 +15,7 @@ export const Newsletter: React.FC = () => {
   };
 
   return (
-    <section className="py-20 sm:py-28 bg-[#F4F0E6] text-[#172019] border-b border-[#123524]/10">
+    <section id="newsletter" className="py-20 sm:py-28 bg-[#F4F0E6] text-[#172019] border-b border-[#123524]/10">
       <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center space-y-6">
         
         <span className="text-[11px] font-sans font-semibold tracking-[0.3em] text-[#6F8F62] uppercase">
@@ -40,18 +40,18 @@ export const Newsletter: React.FC = () => {
               </span>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-center gap-3 bg-white p-2 rounded-full border border-[#123524]/15 shadow-sm">
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-center gap-3 bg-white p-2 rounded-2xl sm:rounded-full border border-[#123524]/15 shadow-sm">
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email address"
-                className="w-full sm:flex-1 px-5 py-3 rounded-full text-xs font-sans text-[#172019] placeholder:text-[#687168]/70 focus:outline-none"
+                className="w-full sm:flex-1 px-5 py-3 rounded-xl sm:rounded-full text-xs font-sans text-[#172019] placeholder:text-[#687168]/70 focus:outline-none"
               />
               <button
                 type="submit"
-                className="w-full sm:w-auto px-6 py-3 bg-[#123524] hover:bg-[#1E4A32] text-[#FAF9F5] rounded-full text-xs font-sans font-semibold tracking-[0.15em] uppercase transition-colors flex items-center justify-center gap-2 flex-shrink-0 shadow"
+                className="w-full sm:w-auto px-6 py-3 bg-[#123524] hover:bg-[#1E4A32] text-[#FAF9F5] rounded-xl sm:rounded-full text-xs font-sans font-semibold tracking-[0.15em] uppercase transition-colors flex items-center justify-center gap-2 flex-shrink-0 shadow"
               >
                 <span>JOIN FITINFUSE</span>
                 <ArrowRight className="w-3.5 h-3.5 text-[#C7A35A]" />

@@ -19,8 +19,8 @@ export const BRAND_INFO = {
   },
   marketedBy: {
     name: 'FitInFuse',
-    address: 'B-11, Basement, Ganpati Enclave, Central Spine, Jaipur, Rajasthan - 302039',
-    fssai: '22226606706048'
+    address: 'B-11, Basement, Ganpati Enclave, Central Spine, Jaipur, Rajasthan – 302039',
+    fssai: '222260670006048'
   },
   contact: {
     email: 'info@fitinfuse.in',
@@ -37,7 +37,8 @@ export const BOTANICALS: Botanical[] = [
     scientificName: 'Matricaria chamomilla',
     description: 'Delicate floral notes.',
     aromaProfile: 'Soft floral sweetness with apple-like soothing undertones',
-    image: 'https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=900&q=80',
+    image: 'https://lh3.googleusercontent.com/d/1AnJuY4bvSkxUfzuLhHkpt9m8Yl30soK9',
+    fallbackImage: 'https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=900&q=80',
     accentColor: '#E6D38B'
   },
   {
@@ -46,7 +47,8 @@ export const BOTANICALS: Botanical[] = [
     scientificName: 'Lavandula angustifolia',
     description: 'Soft aromatic character.',
     aromaProfile: 'Gentle herbaceous fragrance with relaxing notes',
-    image: 'https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?auto=format&fit=crop&w=900&q=80',
+    image: 'https://lh3.googleusercontent.com/d/1TVzAT0ns5PKAGVqIRE6upJNuKMUTa66z',
+    fallbackImage: 'https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?auto=format&fit=crop&w=900&q=80',
     accentColor: '#9C92B3'
   },
   {
@@ -55,7 +57,8 @@ export const BOTANICALS: Botanical[] = [
     scientificName: 'Hibiscus sabdariffa',
     description: 'Vibrant botanical depth.',
     aromaProfile: 'Tart, ruby-red infusion with crisp floral tang',
-    image: 'https://images.unsplash.com/photo-1550950158-d0d960dff51b?auto=format&fit=crop&w=900&q=80',
+    image: 'https://lh3.googleusercontent.com/d/1nzINsC-g_gi2F7zJP77kpdSiVmNXLO5x',
+    fallbackImage: 'https://images.unsplash.com/photo-1550950158-d0d960dff51b?auto=format&fit=crop&w=900&q=80',
     accentColor: '#B83B5E'
   },
   {
@@ -64,7 +67,8 @@ export const BOTANICALS: Botanical[] = [
     scientificName: 'Rosa damascena',
     description: 'Delicate floral elegance.',
     aromaProfile: 'Romantic, velvety blossom notes and gentle sweetness',
-    image: 'https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=900&q=80',
+    image: 'https://lh3.googleusercontent.com/d/1G6126rqaYhXljafk7OeSq1YFMg743wTF',
+    fallbackImage: 'https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=900&q=80',
     accentColor: '#D9899A'
   },
   {
@@ -73,7 +77,8 @@ export const BOTANICALS: Botanical[] = [
     scientificName: 'Glycyrrhiza glabra',
     description: 'Naturally sweet botanical depth.',
     aromaProfile: 'Deep organic sweetness lingering softly on the palate',
-    image: 'https://images.unsplash.com/photo-1608686207856-001b95cf60ca?auto=format&fit=crop&w=900&q=80',
+    image: 'https://lh3.googleusercontent.com/d/1GbY0Hgut1aNKjE1g471Qo-U7-a-nApuu',
+    fallbackImage: 'https://images.unsplash.com/photo-1608686207856-001b95cf60ca?auto=format&fit=crop&w=900&q=80',
     accentColor: '#9B724C'
   },
   {
@@ -82,7 +87,8 @@ export const BOTANICALS: Botanical[] = [
     scientificName: 'Aspalathus linearis',
     description: 'Smooth earthy character.',
     aromaProfile: 'Nutty, warm amber profile with naturally rich body',
-    image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=900&q=80',
+    image: 'https://lh3.googleusercontent.com/d/1GHOOwSWtQnAFcd5pOXNmokXhBHeSet9T',
+    fallbackImage: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=900&q=80',
     accentColor: '#C46238'
   },
   {
@@ -91,7 +97,8 @@ export const BOTANICALS: Botanical[] = [
     scientificName: 'Cymbopogon citratus',
     description: 'Fresh citrus aroma.',
     aromaProfile: 'Bright, zesty herbal fragrance with uplifting clean notes',
-    image: 'https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&w=900&q=80',
+    image: 'https://lh3.googleusercontent.com/d/16Ta5I_VzRJDF3r7_obHiBF_GhJWwx7lT',
+    fallbackImage: 'https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&w=900&q=80',
     accentColor: '#8EAA59'
   },
   {
@@ -100,7 +107,8 @@ export const BOTANICALS: Botanical[] = [
     scientificName: 'Withania somnifera',
     description: 'Earthy botanical character.',
     aromaProfile: 'Grounded, warm root botanical known for serene balance',
-    image: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=900&q=80',
+    image: 'https://lh3.googleusercontent.com/d/1VTuc8-4jGF040p6mmncdaZQOmjg-cOz8',
+    fallbackImage: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=900&q=80',
     accentColor: '#B49C73'
   },
   {
@@ -109,7 +117,8 @@ export const BOTANICALS: Botanical[] = [
     scientificName: 'Mentha piperita',
     description: 'Fresh cooling aroma.',
     aromaProfile: 'Crisp menthol breeze, refreshing clarity and coolness',
-    image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=900&q=80',
+    image: 'https://lh3.googleusercontent.com/d/1r5PZpXiADOwv7w_63JtLzWNDwOeUBpfT',
+    fallbackImage: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=900&q=80',
     accentColor: '#4E8752'
   }
 ];
@@ -179,21 +188,24 @@ export const BREWING_STEPS: BrewingStep[] = [
     title: 'OPEN',
     instruction: 'Place one FitInFuse tea bag in your cup.',
     detail: 'Choose your favourite mug or teapot. The spacious pyramid weave allows botanicals to freely unfurl.',
-    iconImage: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80'
+    iconImage: 'https://lh3.googleusercontent.com/d/1SJ_Vfmcbq6iYVJnmXcsbHC0Mw45jcC5n',
+    fallbackImage: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80'
   },
   {
     number: '02',
     title: 'POUR',
     instruction: 'Add freshly boiled hot water.',
     detail: 'Pour approximately 200–250ml of freshly boiled water directly over the pyramid infusion bag.',
-    iconImage: 'https://images.unsplash.com/photo-1571934811356-5cc506b1826e?auto=format&fit=crop&w=600&q=80'
+    iconImage: 'https://lh3.googleusercontent.com/d/1ucY5gPRh8B6MKWQz12K84wDovTBLgou9',
+    fallbackImage: 'https://images.unsplash.com/photo-1571934811356-5cc506b1826e?auto=format&fit=crop&w=600&q=80'
   },
   {
     number: '03',
     title: 'BREW',
     instruction: 'Steep according to the instructions on the pack.',
     detail: 'Allow the nine botanicals to infuse undisturbed as the liquor turns to a luminous amber-gold.',
-    iconImage: 'https://images.unsplash.com/photo-1576092762791-dd9e2220abd1?auto=format&fit=crop&w=600&q=80'
+    iconImage: 'https://lh3.googleusercontent.com/d/1oySNNdM_X-0cQXcE2WgtSdEDs2qSljEG',
+    fallbackImage: 'https://images.unsplash.com/photo-1576092762791-dd9e2220abd1?auto=format&fit=crop&w=600&q=80'
   }
 ];
 

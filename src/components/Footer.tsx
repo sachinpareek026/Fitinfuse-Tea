@@ -11,23 +11,23 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b border-[#123524]/10">
           
           {/* Brand Column */}
-          <div className="md:col-span-5 space-y-4">
-            <div className="flex items-center">
-              <h3 className="font-serif text-3xl font-bold tracking-[0.2em] text-[#123524] uppercase">
-                {BRAND_INFO.name}
-              </h3>
+          <div className="md:col-span-5 space-y-6">
+            {/* Full-Size Transparent Prominent Logo Showcase */}
+            <div className="w-full max-w-[280px] sm:max-w-[340px] md:max-w-[380px] flex items-center">
+              <img
+                src="/brand-logo.png"
+                alt="FitInFuse Emblem & Identity"
+                referrerPolicy="no-referrer"
+                className="w-full h-auto max-h-40 sm:max-h-48 object-contain pr-[200px] transition-transform duration-300 hover:scale-105"
+              />
             </div>
-
-            <p className="text-xs font-sans tracking-[0.3em] text-[#6F8F62] uppercase font-semibold">
-              {BRAND_INFO.descriptor}
-            </p>
 
             <p className="text-xs text-[#687168] font-sans max-w-sm leading-relaxed">
               {BRAND_INFO.category}. Single signature formula: {BRAND_INFO.productName} ({BRAND_INFO.flavour}).
             </p>
 
             {/* Social Icons */}
-            <div className="flex items-center gap-4 pt-2">
+            <div className="flex items-center gap-3 pt-1">
               <a
                 href="https://instagram.com"
                 target="_blank"
@@ -49,60 +49,79 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Quick Links (Accurately linked to existing on-page content) */}
           <div className="md:col-span-3 space-y-4">
             <span className="text-[10px] font-sans uppercase tracking-[0.25em] font-semibold text-[#123524] block">
               EXPLORE
             </span>
-            <ul className="space-y-2.5 text-xs font-sans font-medium text-[#687168]">
+            <ul className="space-y-3 text-xs font-sans font-medium text-[#687168]">
               <li>
-                <a href="#shop" className="hover:text-[#123524] transition-colors">SHOP</a>
+                <a href="#sourcing-story" className="hover:text-[#123524] transition-colors tracking-wider uppercase block">
+                  Terroir & Sourcing
+                </a>
               </li>
               <li>
-                <a href="#story" className="hover:text-[#123524] transition-colors">OUR STORY</a>
+                <a href="#botanicals" className="hover:text-[#123524] transition-colors tracking-wider uppercase block">
+                  Nine Botanicals
+                </a>
               </li>
               <li>
-                <a href="#botanicals" className="hover:text-[#123524] transition-colors">INGREDIENTS</a>
+                <a href="#brewing-ritual" className="hover:text-[#123524] transition-colors tracking-wider uppercase block">
+                  Brewing Ritual
+                </a>
               </li>
               <li>
-                <a href="#ritual" className="hover:text-[#123524] transition-colors">RITUAL</a>
+                <a href="#community-reviews" className="hover:text-[#123524] transition-colors tracking-wider uppercase block">
+                  Verified Reviews
+                </a>
               </li>
               <li>
-                <a href="#faq" className="hover:text-[#123524] transition-colors">FAQ</a>
-              </li>
-              <li>
-                <a href="mailto:info@fitinfuse.in" className="hover:text-[#123524] transition-colors">CONTACT</a>
+                <a href="#newsletter" className="hover:text-[#123524] transition-colors tracking-wider uppercase block">
+                  Editorial Dispatch
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Direct Contact */}
-          <div className="md:col-span-4 space-y-4">
-            <span className="text-[10px] font-sans uppercase tracking-[0.25em] font-semibold text-[#123524] block">
-              CONTACT & INQUIRIES
-            </span>
-            
-            <div className="space-y-2 text-xs font-sans text-[#687168]">
-              <div className="flex items-center gap-2.5">
-                <Mail className="w-3.5 h-3.5 text-[#6F8F62]" />
-                <a href={`mailto:${BRAND_INFO.contact.email}`} className="hover:text-[#123524] transition-colors">
-                  {BRAND_INFO.contact.email}
-                </a>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <Phone className="w-3.5 h-3.5 text-[#6F8F62]" />
-                <a href={`tel:${BRAND_INFO.contact.phone}`} className="hover:text-[#123524] transition-colors">
-                  {BRAND_INFO.contact.phone}
-                </a>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <Globe className="w-3.5 h-3.5 text-[#6F8F62]" />
-                <a href={`https://${BRAND_INFO.contact.website}`} className="hover:text-[#123524] transition-colors">
-                  {BRAND_INFO.contact.website}
-                </a>
+            {/* Direct Contact & Registered Address */}
+            <div className="md:col-span-4 space-y-4">
+              <span className="text-[10px] font-sans uppercase tracking-[0.25em] font-semibold text-[#123524] block">
+                REGISTERED OFFICE & CONTACT
+              </span>
+              
+              <div className="space-y-2.5 text-xs font-sans text-[#687168]">
+                <div className="bg-[#123524]/5 p-3 rounded-lg border border-[#123524]/10 space-y-1">
+                  <p className="font-semibold text-[#123524]">{BRAND_INFO.marketedBy.name}</p>
+                  <p className="leading-relaxed">
+                    B-11, Basement, Ganpati Enclave,<br />
+                    Central Spine, Jaipur, Rajasthan – 302039
+                  </p>
+                  <p className="text-[11px] text-[#123524] font-medium pt-1 flex items-center gap-1.5">
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#6F8F62] flex-shrink-0" />
+                    <span>FSSAI Licence No.: <strong className="font-semibold text-[#123524]">222260670006048</strong></span>
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-2.5 pt-1">
+                  <Mail className="w-3.5 h-3.5 text-[#6F8F62]" />
+                  <a href={`mailto:${BRAND_INFO.contact.email}`} className="hover:text-[#123524] transition-colors">
+                    {BRAND_INFO.contact.email}
+                  </a>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <Phone className="w-3.5 h-3.5 text-[#6F8F62]" />
+                  <a href={`tel:${BRAND_INFO.contact.phone}`} className="hover:text-[#123524] transition-colors">
+                    {BRAND_INFO.contact.phone}
+                  </a>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <Globe className="w-3.5 h-3.5 text-[#6F8F62]" />
+                  <a href={`https://${BRAND_INFO.contact.website}`} className="hover:text-[#123524] transition-colors">
+                    {BRAND_INFO.contact.website}
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
 
         </div>
 
