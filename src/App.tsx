@@ -8,6 +8,7 @@ import { BrewingRitual } from './components/BrewingRitual';
 import { Testimonials } from './components/Testimonials';
 import { Newsletter } from './components/Newsletter';
 import { Footer } from './components/Footer';
+import { BRAND_INFO } from './data/content';
 
 export default function App() {
   const [isExploreOpen, setIsExploreOpen] = useState(false);
@@ -82,7 +83,7 @@ export default function App() {
         }`}
       >
         <a
-          href="https://wa.link/rbsojf"
+          href={BRAND_INFO.contact.whatsapp || "https://wa.link/hcp1jc"}
           target="_blank"
           rel="noopener noreferrer"
           id="floating-whatsapp-btn"

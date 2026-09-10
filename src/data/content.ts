@@ -25,7 +25,8 @@ export const BRAND_INFO = {
   contact: {
     email: 'info@fitinfuse.in',
     phone: '+91 90246 15279',
-    website: 'www.fitinfuse.in'
+    website: 'www.fitinfuse.in',
+    whatsapp: 'https://wa.link/hcp1jc'
   }
 };
 

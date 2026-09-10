@@ -31,7 +31,7 @@ export const Footer: React.FC = () => {
             {/* Social Icons */}
             <div className="flex items-center gap-3 pt-1">
               <a
-                href="https://wa.link/rbsojf"
+                href={BRAND_INFO.contact.whatsapp || "https://wa.link/hcp1jc"}
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 rounded-full border border-[#123524]/20 flex items-center justify-center text-[#123524] hover:bg-[#25D366] hover:text-white hover:border-[#25D366] transition-all"
@@ -115,7 +115,7 @@ export const Footer: React.FC = () => {
 
                 <div className="flex items-center gap-2.5 pt-1">
                   <MessageCircle className="w-3.5 h-3.5 text-[#25D366]" />
-                  <a href="https://wa.link/rbsojf" target="_blank" rel="noopener noreferrer" className="hover:text-[#123524] text-[#123524] font-medium transition-colors">
+                  <a href={BRAND_INFO.contact.whatsapp || "https://wa.link/hcp1jc"} target="_blank" rel="noopener noreferrer" className="hover:text-[#123524] text-[#123524] font-medium transition-colors">
                     Chat on WhatsApp
                   </a>
                 </div>
