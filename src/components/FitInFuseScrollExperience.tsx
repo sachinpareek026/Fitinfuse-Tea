@@ -187,14 +187,28 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
       {/* 1. TOP MINIMAL LUXURY HEADER (Fully Opaque, Crisp, Sharp, No Blur) */}
       <header className="fixed top-0 left-0 right-0 z-50 h-16 sm:h-20 flex items-center transition-all duration-300 bg-[#071C13] border-b border-[#C7A35A]/20 shadow-md">
         <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between pointer-events-auto">
-          <div className="flex flex-col items-start justify-center">
-            <span className="font-tin-title text-xl sm:text-2xl font-normal text-[#F4F0E5] uppercase tracking-wide leading-tight">
-              {BRAND_INFO.name}
-            </span>
-            <span className="text-[9px] sm:text-[10px] font-tin-spec text-[#C7A35A] uppercase tracking-[0.25em] font-medium leading-tight">
-              {BRAND_INFO.descriptor}
-            </span>
-          </div>
+          {/* Left: Brand Identity with Company Logo */}
+          <a href="#" className="flex items-center gap-3 sm:gap-3.5 group focus:outline-none">
+            <img 
+              src="/brand-logo-clean.png" 
+              alt="FitInFuse Company Logo" 
+              className="w-9 h-9 sm:w-11 sm:h-11 object-contain rounded-full bg-white/95 p-0.5 border border-[#C7A35A]/50 shadow-[0_0_12px_rgba(199,163,90,0.3)] transition-transform duration-300 group-hover:scale-105 flex-shrink-0"
+              onError={(e) => {
+                const target = e.currentTarget;
+                if (!target.src.includes('brand-logo.png')) {
+                  target.src = '/brand-logo.png';
+                }
+              }}
+            />
+            <div className="flex flex-col items-start justify-center">
+              <span className="font-tin-title text-xl sm:text-2xl font-normal text-[#F4F0E5] uppercase tracking-wide leading-tight group-hover:text-[#E5C989] transition-colors">
+                {BRAND_INFO.name}
+              </span>
+              <span className="text-[9px] sm:text-[10px] font-tin-spec text-[#C7A35A] uppercase tracking-[0.25em] font-medium leading-tight">
+                {BRAND_INFO.descriptor}
+              </span>
+            </div>
+          </a>
 
           <div className="flex items-center gap-4 sm:gap-6">
             {/* Subtle Editorial Section Nav (Hidden on Mobile) */}
@@ -276,22 +290,25 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
                 }}
               >
                 <picture className="flex items-start sm:items-center justify-center h-full">
-                  <source srcSet="/product-canister.webp" type="image/webp" />
+                  <source 
+                    srcSet="https://res.cloudinary.com/x1dci3fh/image/upload/f_auto,q_auto/v1790023626/Yellow_and_Black_Illustrative_Movie_Poster_20260922_021647_0000.png" 
+                    type="image/webp" 
+                  />
                   <img
                     id="fitinfuse-hero-canister"
-                    src="/product-canister.png?v=20260828"
+                    src="https://res.cloudinary.com/x1dci3fh/image/upload/v1790023626/Yellow_and_Black_Illustrative_Movie_Poster_20260922_021647_0000.png"
                     alt="FitInFuse Stress Relief Infusion — Peppermint Flavour"
                     referrerPolicy="no-referrer"
                     loading="eager"
                     fetchPriority="high"
                     decoding="sync"
-                    width={707}
-                    height={1000}
+                    width={2183}
+                    height={3087}
                     className="h-full max-h-[60vh] sm:max-h-[calc(100vh-6rem)] w-auto max-w-[94vw] sm:max-w-[90vw] object-contain object-top sm:object-center drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)] pointer-events-auto transition-all duration-300 origin-top sm:origin-center -mt-1 sm:mt-0 scale-[1.18] sm:scale-100 hover:scale-[1.22] md:hover:scale-[1.03]"
                     onError={(e) => {
                       const target = e.currentTarget;
-                      if (!target.src.includes('1000568378-removebg-preview.png')) {
-                        target.src = '/1000568378-removebg-preview.png?v=20260828';
+                      if (!target.src.includes('product-canister.png')) {
+                        target.src = '/product-canister.png';
                       }
                     }}
                   />

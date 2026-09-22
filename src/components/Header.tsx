@@ -36,11 +36,22 @@ export const Header: React.FC<HeaderProps> = ({ cartCount, onOpenCart }) => {
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
         
-        {/* Left: Brand Identity */}
+        {/* Left: Brand Identity with Company Logo */}
         <a 
           href="#" 
-          className="flex items-center group focus:outline-none"
+          className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none"
         >
+          <img 
+            src="/brand-logo-clean.png" 
+            alt="FitInFuse Company Logo" 
+            className="w-8 h-8 sm:w-9 sm:h-9 object-contain rounded-full bg-white p-0.5 border border-[#123524]/20 shadow-sm transition-transform duration-300 group-hover:scale-105"
+            onError={(e) => {
+              const target = e.currentTarget;
+              if (!target.src.includes('brand-logo.png')) {
+                target.src = '/brand-logo.png';
+              }
+            }}
+          />
           <span className="font-serif text-2xl sm:text-3xl font-bold tracking-[0.18em] text-[#123524] uppercase">
             {BRAND_INFO.name}
           </span>
