@@ -140,19 +140,19 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
           {quantity > 0 && (
             <div className="p-6 border-t border-[#123524]/10 bg-[#F4F0E6] space-y-4">
               <div className="flex justify-between items-center text-sm">
-                <span className="text-[#687168]">Total</span>
-                <span className="font-serif font-semibold text-base text-[#123524]">{BRAND_INFO.price}</span>
+                <span className="text-[#687168]">Total ({quantity} {quantity === 1 ? 'pack' : 'packs'})</span>
+                <span className="font-serif font-semibold text-base text-[#123524]">{350 * quantity} /-</span>
               </div>
 
-              <button
-                onClick={() => {
-                  alert(`Thank you for your interest! Pre-orders for FitInFuse Stress Relief Infusion (${quantity} pack${quantity > 1 ? 's' : ''}) will be confirmed directly at info@fitinfuse.in or +91 90246 15279.`);
-                }}
+              <a
+                href={BRAND_INFO.contact.whatsapp || "https://wa.link/hcp1jc"}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full py-3.5 bg-[#123524] hover:bg-[#1E4A32] text-[#FAF9F5] rounded-full text-xs font-semibold tracking-widest uppercase transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 group"
               >
-                <span>RESERVE YOUR RITUAL PACK</span>
+                <span>RESERVE VIA WHATSAPP ({350 * quantity} /-)</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
 
               <p className="text-[10px] text-center text-[#687168]">
                 Direct from FitInFuse • Contact: info@fitinfuse.in

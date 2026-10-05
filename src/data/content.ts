@@ -11,7 +11,9 @@ export const BRAND_INFO = {
   netWeight: '30g',
   servings: '15 SERVINGS',
   caffeine: 'NO CAFFEINE',
-  price: 'PRICE TO BE ADDED',
+  price: '350 /-',
+  priceFormatted: '₹350 /-',
+  priceNumeric: 350,
   manufacturer: {
     name: 'HINCO Infusions Pvt. Ltd.',
     address: 'C-198, Sector-63, Noida, Gautam Buddh Nagar, Uttar Pradesh - 201301',
@@ -250,6 +252,11 @@ export const FAQS: FaqItem[] = [
     id: 'faq-8',
     question: 'Where is the product manufactured and packed?',
     answer: 'Manufactured and Packed by HINCO Infusions Pvt. Ltd. (C-198, Sector-63, Noida, Gautam Buddh Nagar, Uttar Pradesh - 201301, FSSAI Lic. No.: 12725999000692) and Marketed by FitInFuse (B-11, Basement, Ganpati Enclave, Central Spine, Jaipur, Rajasthan - 302039, FSSAI Lic. No.: 22226606706048).'
+  },
+  {
+    id: 'faq-9',
+    question: 'What is the price of FitInFuse Stress Relief Infusion?',
+    answer: 'FitInFuse Stress Relief Infusion is priced at 350 /- (₹350 /-) for a pack containing 15 premium pyramid tea bags (15 servings, 30g net weight).'
   }
 ];
 

@@ -362,6 +362,9 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
                       <span className="text-[10px] sm:text-xs font-tin-spec text-[#E5C989] uppercase tracking-wider px-2 py-0.5 border border-[#C7A35A]/25 rounded-full bg-[#0D2F20]/50">
                         15 Servings (30g)
                       </span>
+                      <span className="text-[10px] sm:text-xs font-tin-spec text-[#F4F0E5] font-semibold uppercase tracking-wider px-2.5 py-0.5 border border-[#C7A35A]/50 rounded-full bg-[#0D2F20]/80 shadow-xs">
+                        {BRAND_INFO.price}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -377,7 +380,7 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
                     </p>
                   </div>
                   <div className="text-xs font-tin-spec text-[#E5C989] uppercase tracking-wider">
-                    <span>Zero Caffeine · Pure Herbal</span>
+                    <span>{BRAND_INFO.price} · Zero Caffeine · Pure Herbal</span>
                   </div>
                 </div>
               </div>
@@ -651,7 +654,7 @@ export const FitInFuseScrollExperience: React.FC<FitInFuseScrollExperienceProps>
                       <span className="h-px w-8 bg-[#C7A35A]/60" />
                     </div>
                     <p className="text-xs sm:text-sm font-tin-spec text-[#C7A35A] uppercase tracking-wider">
-                      {BRAND_INFO.flavour} · {BRAND_INFO.caffeine}
+                      {BRAND_INFO.flavour} · {BRAND_INFO.caffeine} · {BRAND_INFO.price}
                     </p>
                   </div>
                 </div>

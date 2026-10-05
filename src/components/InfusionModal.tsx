@@ -114,22 +114,26 @@ export const InfusionModal: React.FC<InfusionModalProps> = ({ isOpen, onClose })
               </div>
 
               {/* Technical Specifications Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                <div className="bg-white/5 p-4 rounded-xl border border-white/10 text-center">
+              <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
+                <div className="bg-white/5 p-3.5 rounded-xl border border-[#C7A35A]/30 text-center bg-[#0D2F20]/40">
+                  <span className="block text-[10px] font-sans text-[#C7A35A] uppercase tracking-wider font-semibold">Price</span>
+                  <span className="font-serif text-base sm:text-lg text-[#F4F0E5] font-semibold mt-0.5 block">{BRAND_INFO.price}</span>
+                </div>
+                <div className="bg-white/5 p-3.5 rounded-xl border border-white/10 text-center">
                   <span className="block text-[10px] font-sans text-[#C7A35A] uppercase tracking-wider">Flavour</span>
-                  <span className="font-serif text-base text-[#F4F0E5] mt-1 block">Peppermint</span>
+                  <span className="font-serif text-base text-[#F4F0E5] mt-0.5 block">Peppermint</span>
                 </div>
-                <div className="bg-white/5 p-4 rounded-xl border border-white/10 text-center">
+                <div className="bg-white/5 p-3.5 rounded-xl border border-white/10 text-center">
                   <span className="block text-[10px] font-sans text-[#C7A35A] uppercase tracking-wider">Servings</span>
-                  <span className="font-serif text-base text-[#F4F0E5] mt-1 block">15 Pyramid Bags</span>
+                  <span className="font-serif text-base text-[#F4F0E5] mt-0.5 block">15 Pyramid Bags</span>
                 </div>
-                <div className="bg-white/5 p-4 rounded-xl border border-white/10 text-center">
+                <div className="bg-white/5 p-3.5 rounded-xl border border-white/10 text-center">
                   <span className="block text-[10px] font-sans text-[#C7A35A] uppercase tracking-wider">Caffeine</span>
-                  <span className="font-serif text-base text-[#F4F0E5] mt-1 block">0% Caffeine</span>
+                  <span className="font-serif text-base text-[#F4F0E5] mt-0.5 block">0% Caffeine</span>
                 </div>
-                <div className="bg-white/5 p-4 rounded-xl border border-white/10 text-center">
+                <div className="bg-white/5 p-3.5 rounded-xl border border-white/10 text-center col-span-2 sm:col-span-1">
                   <span className="block text-[10px] font-sans text-[#C7A35A] uppercase tracking-wider">Net Weight</span>
-                  <span className="font-serif text-base text-[#F4F0E5] mt-1 block">{BRAND_INFO.netWeight}</span>
+                  <span className="font-serif text-base text-[#F4F0E5] mt-0.5 block">{BRAND_INFO.netWeight}</span>
                 </div>
               </div>
 
@@ -216,29 +220,43 @@ export const InfusionModal: React.FC<InfusionModalProps> = ({ isOpen, onClose })
 
         {/* Footer Actions */}
         <div className="px-6 sm:px-8 py-5 border-t border-[#C7A35A]/15 bg-[#0D2F20]/60 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <span className="text-xs font-sans text-[#F4F0E5]/70 uppercase tracking-widest">Quantity:</span>
-            <div className="flex items-center border border-[#C7A35A]/30 rounded-lg overflow-hidden bg-[#071C13]">
-              <button
-                onClick={() => setPackQuantity(Math.max(1, packQuantity - 1))}
-                className="px-3 py-1.5 text-xs text-[#C7A35A] hover:bg-white/5 cursor-pointer"
-              >
-                -
-              </button>
-              <span className="px-3 py-1.5 text-xs font-sans font-semibold text-[#F4F0E5]">
-                {packQuantity}
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2.5">
+              <span className="text-xs font-sans text-[#F4F0E5]/70 uppercase tracking-widest">Qty:</span>
+              <div className="flex items-center border border-[#C7A35A]/30 rounded-lg overflow-hidden bg-[#071C13]">
+                <button
+                  onClick={() => setPackQuantity(Math.max(1, packQuantity - 1))}
+                  className="px-3 py-1.5 text-xs text-[#C7A35A] hover:bg-white/5 cursor-pointer"
+                  aria-label="Decrease quantity"
+                >
+                  -
+                </button>
+                <span className="px-3 py-1.5 text-xs font-sans font-semibold text-[#F4F0E5]">
+                  {packQuantity}
+                </span>
+                <button
+                  onClick={() => setPackQuantity(packQuantity + 1)}
+                  className="px-3 py-1.5 text-xs text-[#C7A35A] hover:bg-white/5 cursor-pointer"
+                  aria-label="Increase quantity"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+
+            <div className="pl-3 border-l border-[#C7A35A]/25">
+              <span className="text-[10px] font-sans uppercase tracking-wider text-[#C7A35A] block">Total</span>
+              <span className="font-serif text-lg font-semibold text-[#F4F0E5]">
+                {350 * packQuantity} /-
               </span>
-              <button
-                onClick={() => setPackQuantity(packQuantity + 1)}
-                className="px-3 py-1.5 text-xs text-[#C7A35A] hover:bg-white/5 cursor-pointer"
-              >
-                +
-              </button>
             </div>
           </div>
 
           <div className="flex items-center gap-3 w-full sm:w-auto">
-            <button
+            <a
+              href={BRAND_INFO.contact.whatsapp || "https://wa.link/hcp1jc"}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => {
                 setReserved(true);
                 setTimeout(() => setReserved(false), 3000);
@@ -249,15 +267,15 @@ export const InfusionModal: React.FC<InfusionModalProps> = ({ isOpen, onClose })
               {reserved ? (
                 <>
                   <Check className="w-4 h-4 text-[#071C13]" />
-                  <span>Infusion Reserved</span>
+                  <span>Order Initiated ({350 * packQuantity} /-)</span>
                 </>
               ) : (
                 <>
-                  <span>Add to Tea Ritual ({packQuantity} {packQuantity === 1 ? 'Pack' : 'Packs'})</span>
+                  <span>Order via WhatsApp ({packQuantity} {packQuantity === 1 ? 'Pack' : 'Packs'} • {350 * packQuantity} /-)</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </>
               )}
-            </button>
+            </a>
           </div>
         </div>
       </div>
